@@ -1,0 +1,3 @@
+Yalnız yorumuna uyan örneklere bakmak, henüz sınamadığın bir açıklamayı güçlü gösterebilir. Temsili yorumuna uymayan bir durumun nasıl görüneceğini yaz. Örnek: bütün belgeler aynı yapıda diyorsan farklı yapının hangi özelliğini arayacağını belirt. Karşı örnek yokmuş gibi sonuç yazma; arama kapsamını ve yöntemin gerektirdiği kontrolü kaydet. Bu bir temsili planlama alıştırmasıdır. Aşağıdaki satırı kendi projenin koşullarıyla doldur; tamamlanan kayıt araştırma kalitesinin onayı değildir. Kopyalanabilir satır: Yorum: ___; ters örnek ölçütü: ___; kontrol: ___. Zor olan: ters örneği tanımlamak mı, aramak mı?
+
+#AkademikYZ #ArastirmaYontemleri #YontemNotu #Lisansustu

@@ -1,0 +1,2 @@
+kapak_saniye=1.0
+reels_akista=evet

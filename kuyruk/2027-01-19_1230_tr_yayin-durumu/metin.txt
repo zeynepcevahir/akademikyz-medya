@@ -1,0 +1,3 @@
+Eski bir PDF kopyası, yayın kaydındaki sonraki açıklamaları göstermeyebilir. Kullanacağın bir kaynağın özgün yayın sayfasını aç; görünen düzeltme veya geri çekme notunu kontrol et. Temsili kayıt: durum notu görüldü veya bu kontrolde bulunamadı; gerçek bağlantı ve tarih ekle. Not bulamamayı kesin temiz onayı sayma; belirsiz durumda yayıncı açıklamasını inceleyip kullanımını değerlendir. Bu bir temsili planlama alıştırmasıdır. Aşağıdaki satırı kendi projenin koşullarıyla doldur; tamamlanan kayıt araştırma kalitesinin onayı değildir. Kopyalanabilir satır: Yayın: ___; kontrol tarihi: ___; görülen durum: ___. Kaynakta zor olan: durumu bulmak mı, değerlendirmek mi?
+
+#AkademikYZ #LiteraturTaramasi #KaynakYonetimi #Lisansustu

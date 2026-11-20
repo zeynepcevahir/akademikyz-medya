@@ -1,0 +1,3 @@
+Eksik alanı sessizce doldurmak, verideki belirsizliği görünmez hale getirir. Temsili kayıtta eksik alanı işaretle; nasıl ele alınacağını bir yöntem sorusu yap. Örnek: tarihi bulunmayan belge için karar vermeden önce olası seçenekleri not et. Gerçek değer uydurma; uygun yaklaşımı yöntem kaynağıyla ve danışmanınla değerlendirmeden analize geçme. Bu bir temsili planlama alıştırmasıdır. Aşağıdaki satırı kendi projenin koşullarıyla doldur; tamamlanan kayıt araştırma kalitesinin onayı değildir. Kopyalanabilir satır: Eksik alan: ___; yöntem sorusu: ___; karar: ___. Eksikte zor olan: fark etmek mi, karar vermek mi?
+
+#AkademikYZ #ArastirmaYontemleri #YontemNotu #Lisansustu

@@ -1,0 +1,3 @@
+Bir metne kod vermek, o etiketi neden seçtiğini kendiliğinden görünür kılmaz. Temsili bir cümle seç; kodunu ve seçme gerekçeni yanına yaz. Örnek cümle: kaynağın tarihini kontrol ettim; olası kodu ve sınırını açıkla. Bu denemeyi tamamlanmış analiz sayma; kodlama yaklaşımını uygun yöntem kaynağıyla ve danışmanınla değerlendir. Bu bir temsili planlama alıştırmasıdır. Aşağıdaki satırı kendi projenin koşullarıyla doldur; tamamlanan kayıt araştırma kalitesinin onayı değildir. Kopyalanabilir satır: Alıntı: ___; kod: ___; gerekçe: ___. Kodlamada zor olan: etiket mi, gerekçe mi?
+
+#AkademikYZ #ArastirmaYontemleri #YontemNotu #Lisansustu

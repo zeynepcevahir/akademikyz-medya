@@ -1,0 +1,3 @@
+Benzer isimli dosyalar çoğalınca hangi metin üzerinde karar verildiği karışabilir. Tarih ve kısa değişiklik notuyla bir sürüm kaydı oluştur; önceki kopyayı koru. Temsili ad: 2026-12-11_yontem_v03; not: dahil etme ölçütü açıklaması eklendi. Kopyayı açıp okunabildiğini kontrol et; eşitlemenin tek başına geri dönüş garantisi olduğunu varsayma. Bu bir temsili planlama alıştırmasıdır. Aşağıdaki satırı kendi projenin koşullarıyla doldur; tamamlanan kayıt araştırma kalitesinin onayı değildir. Kopyalanabilir satır: Sürüm: ___; değişiklik: ___; geri dönüş kopyası: ___. Dosyada zor olan: adlandırma mı, geri dönüş mü?
+
+#AkademikYZ #HaftalikPlan #TezRutini #Lisansustu

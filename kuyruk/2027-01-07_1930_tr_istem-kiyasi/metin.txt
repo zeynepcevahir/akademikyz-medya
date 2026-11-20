@@ -1,0 +1,3 @@
+İki istemi yalnız kulağa iyi gelen yanıtla kıyaslamak, değerlendirme ölçütünü gizler. Aynı kurgusal girdiyle iki istemi dene; önceden tek karşılaştırma ölçütü yaz. Temsili ölçüt: istenen üç alanın varlığı; yanıtların doğruluğunu ayrıca kontrol et. Tek denemeden model üstünlüğü çıkarma; koşulları kaydet ve yanlış bilgiyi başarılı biçimden ayır. Bu bir temsili planlama alıştırmasıdır. Aşağıdaki satırı kendi projenin koşullarıyla doldur; tamamlanan kayıt araştırma kalitesinin onayı değildir. Kopyalanabilir satır: İstem A: ___; istem B: ___; ölçüt: ___. Kıyaslamada zor olan: ölçüt mü, kontrol mü?
+
+#AkademikYZ #SorumluYZ #AkademikYazim #Lisansustu

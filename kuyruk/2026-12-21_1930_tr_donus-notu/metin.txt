@@ -1,0 +1,3 @@
+Bir işe ara verince en son hangi kararda kaldığını yeniden bulmak gerekebilir. Dosyayı kapatmadan önce kaldığın yeri ve ilk dönüş adımını kısa yaz. Temsili not: yöntem paragrafının ikinci cümlesi açık; dönüşte seçim gerekçesini kontrol et. Notta özel veri bulundurma; mola süresini kendi sınav ve dinlenme koşullarına göre belirle. Bu bir temsili planlama alıştırmasıdır. Aşağıdaki satırı kendi projenin koşullarıyla doldur; tamamlanan kayıt araştırma kalitesinin onayı değildir. Kopyalanabilir satır: Kaldığım yer: ___; dönüşte ilk adım: ___. Dönüşte zor olan: yeri bulmak mı, başlamak mı?
+
+#AkademikYZ #TezPlanlama #ArastirmaSorusu #Lisansustu

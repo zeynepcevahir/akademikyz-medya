@@ -1,0 +1,3 @@
+Similar file names can hide which draft contains the decision you actually approved. Keep a dated version note and preserve a separate previous copy before substantial edits. Illustrative name: 2026-12-11_methods_v03; note: eligibility rationale added for advisor review. Open the recovery copy to check readability; do not assume synchronisation guarantees recoverability. This is an illustrative planning exercise. Use the line below with your own project conditions; a completed record does not certify research quality. Reusable line: Version: ___; change: ___; recovery copy: ___. Harder: naming drafts or recovering them?
+
+#AcademicAI #WeeklyReview #ThesisSystems #GradSchool

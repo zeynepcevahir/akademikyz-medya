@@ -1,0 +1,3 @@
+Aynı istemde özet, eleştiri ve yeniden yazım istemek, hangi çıktıyı değerlendirdiğini belirsizleştirebilir. Önce yalnız sorun listesini iste; sonra seçtiğin tek sorun için açıklama iste. Temsili metinde anlaşılmayan bir terimi seç; kaynak üretmesini veya metni tamamlamasını isteme. İki çıktıyı da kendi metninle karşılaştır; yanlış veya kapsam dışı öneriyi reddet. Bu bir temsili planlama alıştırmasıdır. Aşağıdaki satırı kendi projenin koşullarıyla doldur; tamamlanan kayıt araştırma kalitesinin onayı değildir. Kopyalanabilir satır: Görev: ___; çıktı biçimi: ___; kontrol: ___. İstemde zor olan: görev mi, sınır mı?
+
+#AkademikYZ #SorumluYZ #AkademikYazim #Lisansustu

@@ -1,0 +1,3 @@
+Bölüm başlığı olması, o bölümün araştırma sorusuna katkısını tek başına açıklamaz. Bir bölüm seç; okuyucunun bölüm sonunda neyi anlayacağını tek cümleyle yaz. Temsili örnek: yöntem bölümü, materyalin nasıl seçildiğini ve nedenini açıklayacak. Bu işlevi programının beklentileriyle karşılaştır; bütün tezler için aynı bölüm düzenini varsayma. Bu bir temsili planlama alıştırmasıdır. Aşağıdaki satırı kendi projenin koşullarıyla doldur; tamamlanan kayıt araştırma kalitesinin onayı değildir. Kopyalanabilir satır: Bölüm: ___; okuyucuya katkı: ___. Zor olan: bölüm sırası mı, bölümün işi mi?
+
+#AkademikYZ #TezPlanlama #ArastirmaSorusu #Lisansustu

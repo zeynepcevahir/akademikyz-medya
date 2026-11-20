@@ -1,0 +1,3 @@
+Bir YZ önerisi, söylemediğin koşulları varmış gibi kabul ederek ilerleyebilir. Temsili plan önerisinde varsayılan erişim, süre veya izin koşulunu işaretle. Örnek: gelecek hafta görüşme yap önerisinde katılımcı erişiminin henüz belirsiz olduğunu yaz. Varsayımı kendi kayıtlarınla kontrol et; izin gerektiren işi onaydan önce başlatma. Bu bir temsili planlama alıştırmasıdır. Aşağıdaki satırı kendi projenin koşullarıyla doldur; tamamlanan kayıt araştırma kalitesinin onayı değildir. Kopyalanabilir satır: Varsayım: ___; doğrulama: ___; karar: ___. Öneride zor olan: varsayım mı, doğrulama mı?
+
+#AkademikYZ #SorumluYZ #AkademikYazim #Lisansustu

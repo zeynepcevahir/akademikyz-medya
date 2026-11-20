@@ -1,0 +1,3 @@
+Geri bildirim dosyası uzun olduğunda ilk yapılacak değişiklik belirsiz kalabilir. Tek yorumu seç; açıklama isteyen kısmı ve uygulanabilir değişikliği birbirinden ayır. Temsili yorum: örneklem sınırı açık değil; ilgili paragrafı bulup bir açıklama taslağı yaz. Anlamı belirsiz yorumu varsayımla kapatma; gerekiyorsa danışmanına tek açıklama sorusu hazırla. Bu bir temsili planlama alıştırmasıdır. Aşağıdaki satırı kendi projenin koşullarıyla doldur; tamamlanan kayıt araştırma kalitesinin onayı değildir. Kopyalanabilir satır: Yorum: ___; değişiklik: ___; açıklama ihtiyacı: ___. Geri bildirimde zor olan: anlamak mı, uygulamak mı?
+
+#AkademikYZ #HaftalikPlan #TezRutini #Lisansustu

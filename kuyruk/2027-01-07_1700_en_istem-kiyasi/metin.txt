@@ -1,0 +1,3 @@
+The response you like best may not be the one that follows your stated task. Try two prompt drafts on the same fictional input using one criterion chosen beforehand. Practice criterion: presence of three requested fields; evaluate factual accuracy as a separate check. One trial cannot establish a better model; record conditions and inspect errors behind a neat format. This is an illustrative planning exercise. Use the line below with your own project conditions; a completed record does not certify research quality. Reusable line: Prompt A: ___; prompt B: ___; criterion: ___. Harder: choosing the criterion or checking it?
+
+#AcademicAI #ResponsibleAI #AcademicWriting #GradSchool

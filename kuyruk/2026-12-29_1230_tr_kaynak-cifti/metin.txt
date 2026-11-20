@@ -1,0 +1,3 @@
+Benzer başlıklı iki kayıt, iki ayrı yayın da aynı yayının farklı kaydı da olabilir. Bir çifti seç; başlık, yazar, yıl ve varsa DOI bilgisini karşılaştır. Temsili örnekte küçük başlık farkını hemen ayrı kaynak sayma; yayın sayfasına dön. Kontrol etmeden kayıt silme; farklı sürüm ve yayın türü olasılığını kendi notunda koru. Bu bir temsili planlama alıştırmasıdır. Aşağıdaki satırı kendi projenin koşullarıyla doldur; tamamlanan kayıt araştırma kalitesinin onayı değildir. Kopyalanabilir satır: Kayıt çifti: ___; fark: ___; doğrulama: ___. Kaynaklarda zor olan: benzerlik mi, sürüm farkı mı?
+
+#AkademikYZ #LiteraturTaramasi #KaynakYonetimi #Lisansustu

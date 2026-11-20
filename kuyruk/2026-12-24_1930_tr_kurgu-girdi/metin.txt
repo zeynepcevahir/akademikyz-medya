@@ -1,0 +1,3 @@
+Bir istemi denemek için gerçek katılımcı anlatısını dış araca taşımak gerekmez. Tamamen kurgusal ve özel bilgi içermeyen iki cümleyle biçim denemesi yap. Temsili girdi: bir öğrenci kaynak tarihini kontrol eder; diğeri notunun yerini arar. Kurguyu gerçek araştırma verisi gibi raporlama; gerçek verinin kullanımı ayrıca izin ve politika kontrolü gerektirir. Bu bir temsili planlama alıştırmasıdır. Aşağıdaki satırı kendi projenin koşullarıyla doldur; tamamlanan kayıt araştırma kalitesinin onayı değildir. Kopyalanabilir satır: Kurgu girdi: ___; deneme amacı: ___; sınır: ___. Denemede zor olan: girdi mi, sınır mı?
+
+#AkademikYZ #SorumluYZ #AkademikYazim #Lisansustu

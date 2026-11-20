@@ -1,0 +1,3 @@
+Similar records might describe one publication or genuinely different versions of a work. For a light optional task, compare one pair's title, authors, year and available DOI. In a practice case, a shortened title alone is not enough to decide duplication. Check the original publication records before deletion; preserve notes about distinct versions or publication types. This is an illustrative planning exercise. Use the line below with your own project conditions; a completed record does not certify research quality. Reusable line: Record pair: ___; difference: ___; verification: ___. Harder to check: similarity or version differences?
+
+#AcademicAI #LiteratureReview #EvidenceNotes #GradSchool

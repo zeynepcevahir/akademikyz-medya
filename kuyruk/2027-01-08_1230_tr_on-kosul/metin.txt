@@ -1,0 +1,3 @@
+Bir işi takvime yazmak, başlaması için gereken kararın hazır olduğunu göstermez. Haftanın tek işini seç; ön koşulunu ve beklerken yapabileceğin bağımsız adımı yaz. Temsili plan: analizden önce materyal erişimi; beklerken yöntem sorularını düzenlemek. Bekleyen onayı verilmiş sayma; bağımsız işin de izin gerektirip gerektirmediğini kontrol et. Bu bir temsili planlama alıştırmasıdır. Aşağıdaki satırı kendi projenin koşullarıyla doldur; tamamlanan kayıt araştırma kalitesinin onayı değildir. Kopyalanabilir satır: İş: ___; ön koşul: ___; bağımsız adım: ___. Planı durduran: zaman mı, ön koşul mu?
+
+#AkademikYZ #HaftalikPlan #TezRutini #Lisansustu

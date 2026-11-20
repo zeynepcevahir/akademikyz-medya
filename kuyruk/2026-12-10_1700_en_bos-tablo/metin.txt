@@ -1,0 +1,3 @@
+A polished table must not fill gaps with values that were never collected. Ask for column headings and an empty structure, using a fictional task description. Try record identifier, review status and note fields; request no numbers or sample findings. Check each column's purpose yourself; empty cells must remain distinct from measured results. This is an illustrative planning exercise. Use the line below with your own project conditions; a completed record does not certify research quality. Reusable line: Column: ___; purpose: ___; data source: ___. Harder: choosing columns or checking meaning?
+
+#AcademicAI #ResponsibleAI #AcademicWriting #GradSchool

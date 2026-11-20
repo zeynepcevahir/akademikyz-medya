@@ -1,0 +1,3 @@
+Güzel görünen bir tablo, henüz toplanmamış veri için gerçek değerler içeremez. YZ'den yalnız sütun adları ve boş bir tablo taslağı istemeyi dene. Temsili taslakta kayıt kimliği, kontrol durumu ve not alanını kullan; sayı üretme. Her sütunun amacını kendin doğrula; boş alanı bulgu veya hesaplanmış sonuç gibi sunma. Bu bir temsili planlama alıştırmasıdır. Aşağıdaki satırı kendi projenin koşullarıyla doldur; tamamlanan kayıt araştırma kalitesinin onayı değildir. Kopyalanabilir satır: Sütun: ___; amacı: ___; veri kaynağı: ___. Tabloda zor olan: sütun mu, kontrol mü?
+
+#AkademikYZ #SorumluYZ #AkademikYazim #Lisansustu
