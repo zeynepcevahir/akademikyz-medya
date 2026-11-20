@@ -3,7 +3,7 @@ name: Shorts örnekleri
 on:
   workflow_dispatch:
 permissions:
-  contents: read
+  contents: write
 jobs:
   ornek:
     runs-on: ubuntu-latest
@@ -22,3 +22,8 @@ jobs:
           path: |
             ornek/*.mp4
             ornek/*.png
+      - name: Örnekleri "ornek" dalına koy
+        run: |
+          cd ornek && rm -rf g* && git init -q -b ornek && git add . \
+            && git -c user.name=OtoPaylasim -c user.email=noreply@anthropic.com commit -qm "Shorts örnekleri" \
+            && git push -qf "https://x-access-token:${{ github.token }}@github.com/${{ github.repository }}" ornek
