@@ -19,6 +19,8 @@ if len(sys.argv) != 2 or sys.argv[1] not in GIZLI:
     sys.exit("Kullanım: python3 youtube_baglan.py osm|hasbihal")
 hesap = sys.argv[1]
 dosyalar = glob.glob(os.path.join(os.path.dirname(os.path.abspath(__file__)), "client_secret*.json"))
+if not dosyalar:  # tarayıcının indirdiği yer
+    dosyalar = sorted(glob.glob(os.path.expanduser("~/Downloads/client_secret*.json")), key=os.path.getmtime, reverse=True)
 if not dosyalar:
     sys.exit("client_secret*.json bulunamadı; Google Cloud'dan indirip bu klasöre koyun.")
 istemci = json.load(open(dosyalar[0]))
