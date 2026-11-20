@@ -1,0 +1,44 @@
+{
+  "surum": 1,
+  "isler": {
+    "2026-11-20_0255_en_literature-carousel:5a82171b6fdb15957ed9f693b89492f7368dd0d76b67d7c5e3edb8be10940ea3": {
+      "klasor": "2026-11-20_0255_en_literature-carousel",
+      "ozet": "5a82171b6fdb15957ed9f693b89492f7368dd0d76b67d7c5e3edb8be10940ea3",
+      "hesap": "en",
+      "durum": "bekliyor",
+      "deneme_sayisi": 1,
+      "son_hata": "Instagram API isteği başarısız (HTTP 400).",
+      "hata_zamani": "2026-11-20T03:04:18+03:00",
+      "sonraki_deneme": "2026-11-20T03:19:18+03:00"
+    },
+    "2026-11-20_0310_en_literature-carousel-2:5a82171b6fdb15957ed9f693b89492f7368dd0d76b67d7c5e3edb8be10940ea3": {
+      "klasor": "2026-11-20_0310_en_literature-carousel-2",
+      "ozet": "5a82171b6fdb15957ed9f693b89492f7368dd0d76b67d7c5e3edb8be10940ea3",
+      "hesap": "en",
+      "durum": "yayinlandi",
+      "deneme_sayisi": 0,
+      "konteyner_id": "17880001041573407",
+      "yayina_baslama": "2026-11-20T03:10:12+03:00",
+      "media_id": "18151442680599271",
+      "yayin_zamani": "2026-11-20T03:10:22+03:00",
+      "permalink": "https://www.instagram.com/p/Df8VfHdirWr/",
+      "arsiv": "yayinlandi/2026-11-20_0310_en_literature-carousel-2"
+    }
+  },
+  "tokenlar": {
+    "tr": {
+      "alinma": "2026-11-20T02:44:24+03:00",
+      "son_yenileme": "2026-11-20T02:44:24+03:00",
+      "bitis": null,
+      "bitis_tahmini": false
+    },
+    "en": {
+      "alinma": "2026-11-20T02:45:27+03:00",
+      "son_yenileme": "2026-11-20T02:45:27+03:00",
+      "bitis": null,
+      "bitis_tahmini": false
+    },
+    "osm": {},
+    "hasbihal": {}
+  }
+}

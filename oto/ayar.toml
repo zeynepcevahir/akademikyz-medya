@@ -1,0 +1,26 @@
+mod = "canli"
+kuyruk = "../kuyruk"
+api_surumu = "v24.0"
+gunluk_sinir = 3
+
+[hesaplar.tr]
+kullanici_adi = "akademikyz.tr"
+ig_id = "17841463028324015"
+
+[hesaplar.en]
+kullanici_adi = "academicai.lab"
+ig_id = "17841477202180739"
+
+[hesaplar.osm]
+kullanici_adi = "sarkilarlaosmanlica"
+ig_id = ""
+
+[hesaplar.hasbihal]
+kullanici_adi = "osmanlicahasbihal"
+ig_id = ""
+
+[yukleme]
+protokol = "github"
+depo = "."
+uzak_klasor = "m"
+genel_adres = "https://zeynepcevahir.github.io/akademikyz-medya/m"
