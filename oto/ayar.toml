@@ -13,11 +13,11 @@ ig_id = "17841477202180739"
 
 [hesaplar.osm]
 kullanici_adi = "sarkilarlaosmanlica"
-ig_id = ""
+ig_id = "17841435490412157"
 
 [hesaplar.hasbihal]
 kullanici_adi = "osmanlicahasbihal"
-ig_id = ""
+ig_id = "17841444113113164"
 
 [yukleme]
 protokol = "github"
