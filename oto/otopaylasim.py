@@ -619,7 +619,7 @@ class GitHubPagesUploader:
         if not (self.repo / ".git").exists():
             raise AppError("GitHub medya deposu bulunamadı.")
         self.folder.mkdir(parents=True, exist_ok=True)
-        self.git("pull", "--rebase", "--quiet")
+        self.git("pull", "--rebase", "--autostash", "--quiet")
         return self
 
     def __exit__(self, *args):
@@ -683,7 +683,7 @@ class GitHubPagesUploader:
             except RequestError:
                 if attempt == 3:
                     raise
-                self.git("pull", "--rebase", "--quiet")
+                self.git("pull", "--rebase", "--autostash", "--quiet")
                 self.sleep(3)
 
     def cleanup_old(self, now, logger):
