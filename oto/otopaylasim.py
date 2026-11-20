@@ -771,6 +771,8 @@ class Application:
         self.clock = clock
         self.notifier = notifier
         self.state = None
+        # Çalışmada yayın/doğrulama hatası olduysa komut sıfırdan farklı kodla biter (bulutta iş kırmızı olur).
+        self.hata_var = False
 
     @property
     def dry(self):
@@ -792,6 +794,7 @@ class Application:
         return (self.uploader_factory or Uploader)(config, self.secret("yukleme_sifre"))
 
     def inform(self, message):
+        self.hata_var = True
         try:
             self.notifier(self.redactor.clean(message))
         except Exception:
@@ -900,6 +903,12 @@ class Application:
                 count += 1
         return count
 
+    def relative(self, destination):
+        try:
+            return str(Path(destination).resolve().relative_to(self.queue.resolve()))
+        except Exception:
+            return Path(destination).name
+
     def move_folder(self, path, category):
         destination = self.queue / category / path.name
         destination.parent.mkdir(parents=True, exist_ok=True)
@@ -917,7 +926,7 @@ class Application:
         try:
             atomic_write(path / "SONUC.txt", text)
             destination = self.move_folder(path, "yayinlandi")
-            record["arsiv"] = str(destination)
+            record["arsiv"] = self.relative(destination)
             record.pop("yerel_hata", None)
             self.state.save()
         except Exception:
@@ -942,6 +951,7 @@ class Application:
             record.update(klasor=candidate.path.name, durum="bekliyor", deneme_hatasi=message, son_hata=message)
             self.state.save()
             return
+        self.hata_var = True
         record.update(klasor=candidate.path.name, hesap=candidate.account, durum="hatali", son_hata=message)
         self.state.save()
         self.archive_error(candidate.path, record, message)
@@ -949,12 +959,13 @@ class Application:
     def archive_error(self, path, record, message):
         try:
             atomic_write(path / "HATA.txt", f"Zaman: {stamp(self.clock())}\nHata: {message}\n")
-            record["arsiv"] = str(self.move_folder(path, "hatali"))
+            record["arsiv"] = self.relative(self.move_folder(path, "hatali"))
             self.state.save()
         except Exception:
             self.logger.error("%s: hatalı klasör arşivlenemedi; sonraki çalışmada yeniden taşınacak.", path.name)
 
     def failure(self, post, record, error):
+        self.hata_var = True
         message = self.redactor.clean(str(error) if isinstance(error, AppError) else "Yerel dosya veya yükleme işlemi başarısız.")
         record["son_hata"] = message
         record["hata_zamani"] = stamp(self.clock())
@@ -978,6 +989,29 @@ class Application:
             self.state.save()
             self.logger.info("%s: %s. deneme başarısız; %s dakika beklenecek.",
                              post.candidate.path.name, attempts, delay)
+
+    def checkpoint(self, note):
+        """Bulutta durum.json'u hemen depoya gönderir; iş yarıda kesilse de kayıt kaybolmaz."""
+        if not os.environ.get("GITHUB_ACTIONS"):
+            return
+        state_path = str(self.state.path)
+        def git(*args):
+            return subprocess.run(["git", *args], capture_output=True, text=True, timeout=120)
+        try:
+            git("add", state_path)
+            if git("diff", "--cached", "--quiet").returncode == 0:
+                return
+            git("commit", "-q", "-m", f"Paylaşım kaydı: {note}", "--", state_path)
+            for _ in range(4):
+                if git("push", "-q").returncode == 0:
+                    return
+                git("pull", "-q", "--rebase", "--autostash")
+                time.sleep(3)
+            self.logger.error("Anında kayıt depoya gönderilemedi (%s).", note)
+            self.hata_var = True
+        except Exception:
+            self.logger.error("Anında kayıt yapılamadı (%s).", note)
+            self.hata_var = True
 
     def cleanup_uploads(self, uploader, names):
         for name in names:
@@ -1014,6 +1048,7 @@ class Application:
                         record.update(durum="yayinlaniyor", konteyner_id=container_id,
                                       yayina_baslama=stamp(self.clock()))
                         self.state.save()
+                        self.checkpoint(post.candidate.path.name + " yayınlanıyor")
                         try:
                             data = api.call("POST", f"{ig_id}/media_publish", creation_id=container_id)
                             media_id = str(data.get("id", ""))
@@ -1033,6 +1068,7 @@ class Application:
                         record.pop("son_hata", None)
                         record.pop("sonraki_deneme", None)
                         self.state.save()
+                        self.checkpoint(post.candidate.path.name + " yayınlandı")
                         # Buradaki hatalar yayını veya deneme sayısını değiştirmez.
                         try:
                             record["permalink"] = api.call("GET", media_id, fields="permalink").get("permalink", "")
@@ -1050,6 +1086,7 @@ class Application:
                     self.state.save()
                 self.finish_local(post.candidate.path, record)
             elif record.get("durum") == "yayinlaniyor":
+                self.hata_var = True
                 record["son_hata"] = "Yayın sonucu belirsiz; otomatik tekrar engellendi. Instagram hesabını denetleyin."
                 self.logger.error("%s: %s", post.candidate.path.name, record["son_hata"])
                 with contextlib.suppress(Exception):
@@ -1091,6 +1128,25 @@ class Application:
                         self.finish_local(candidate.path, completed)
                 else:
                     self.logger.warning("%s: önceki yayın isteğinin sonucu belirsiz; elle denetim gerekiyor.", candidate.path.name)
+                continue
+            if candidate.scheduled and candidate.scheduled > self.clock() and not immediate:
+                continue
+            try:
+                digest = fingerprint(candidate.path)
+            except (OSError, ValidationError):
+                digest = None
+            same = digest and next((r for r in self.state.data["isler"].values()
+                                    if r.get("ozet") == digest
+                                    and r.get("durum") in {"yayinlandi", "yayinlaniyor"}), None)
+            if same:
+                self.logger.warning("%s: aynı içerik daha önce '%s' adıyla %s; yeniden yayınlanmayacak.",
+                                    candidate.path.name, same.get("klasor"),
+                                    "yayınlandı" if same["durum"] == "yayinlandi" else "yayına gönderildi")
+                if not self.dry:
+                    with contextlib.suppress(Exception):
+                        atomic_write(candidate.path / "SONUC.txt",
+                                     f"Yinelenen içerik; önceki yayın: {same.get('klasor')} {same.get('permalink', '')}\n")
+                        self.move_folder(candidate.path, "yayinlandi")
                 continue
             try:
                 if candidate.scheduled and candidate.scheduled > self.clock() and not immediate:
@@ -1245,6 +1301,9 @@ def main(argv=None):
             return 0
         app = Application()
         app.execute(args.komut, **{k: v for k, v in vars(args).items() if k != "komut"})
+        if app.hata_var:
+            print("Hata: Bu çalışmada en az bir paylaşım sorunu oldu; ayrıntı kayıt dosyasında.", file=sys.stderr)
+            return 1
         return 0
     except AppError as error:
         print(f"Hata: {error}", file=sys.stderr)

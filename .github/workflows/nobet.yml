@@ -11,6 +11,7 @@ on:
 permissions:
   actions: write
   contents: read
+  issues: write
 concurrency:
   group: nobetci
   cancel-in-progress: false
@@ -23,10 +24,14 @@ jobs:
       REPO: ${{ github.repository }}
       TZ: Europe/Istanbul
     steps:
+      - uses: actions/checkout@v4
+        with:
+          sparse-checkout: oto
       - name: Nöbet
         run: |
           bitis=$(( $(date +%s) + 5*3600 + 40*60 ))
           son_tetik=0
+          uyarilan=""
           while [ "$(date +%s)" -lt "$bitis" ]; do
             simdi=$(date +%Y-%m-%d_%H%M)
             vadeli=$(gh api "repos/$REPO/contents/kuyruk" --jq '.[] | select(.type=="dir") | .name' 2>/dev/null \
@@ -39,6 +44,12 @@ jobs:
                 gh workflow run paylas.yml -R "$REPO" --ref main && son_tetik=$(date +%s)
               fi
             fi
+            # Saati 60 dk'dan fazla geçmiş gönderi varsa (her biri için bu nöbette bir kez) uyar.
+            for g in $(oto/gecikme_kontrol.sh); do
+              case " $uyarilan " in *" $g "*) continue;; esac
+              oto/uyari.sh "Gecikmiş paylaşım" "Saati geçtiği hâlde paylaşılmadı: $g (kuyrukta duruyor). Son çalışmalar: https://github.com/$REPO/actions" || true
+              uyarilan="$uyarilan $g"
+            done
             sleep 300
           done
       - name: Nöbeti devret

@@ -1,18 +1,36 @@
-# Instagram anahtarının (IG_TOKEN) geçerliliğini haftada bir denetler.
-# Süre 15 günden azsa veya anahtar geçersizse iş kırmızı biter (GitHub e-posta ile bildirir).
-name: Anahtar kontrolü
+# Günlük kontrol: Instagram anahtarı çalışıyor mu, saati geçmiş paylaşım var mı?
+# Sorun varsa iş kırmızı biter ve depoda "uyarı" kaydı (issue) açılır; GitHub e-posta ile bildirir.
+name: Günlük kontrol
 on:
   schedule:
-    - cron: "41 6 * * 1"
+    - cron: "41 6 * * *"
   workflow_dispatch:
 permissions:
   contents: read
+  issues: write
 jobs:
   kontrol:
     runs-on: ubuntu-latest
+    env:
+      GH_TOKEN: ${{ github.token }}
+      REPO: ${{ github.repository }}
+      TZ: Europe/Istanbul
     steps:
       - uses: actions/checkout@v4
-      - name: Bitiş tarihi
+      - name: Anahtar
         env:
           IG_TOKEN: ${{ secrets.IG_TOKEN }}
-        run: python3 oto/anahtar_kontrol.py
+        run: |
+          if ! python3 oto/anahtar_kontrol.py; then
+            oto/uyari.sh "Instagram anahtarı çalışmıyor" "Günlük kontrolde anahtar (IG_TOKEN) çalışmadı; paylaşımlar durabilir. Meta Business ayarlarından yeni anahtar üretip GitHub gizli alanına kaydedin."
+            exit 1
+          fi
+      - name: Gecikmiş paylaşım
+        run: |
+          g=$(oto/gecikme_kontrol.sh)
+          if [ -n "$g" ]; then
+            echo "$g"
+            oto/uyari.sh "Gecikmiş paylaşım" "Günlük kontrol: saati geçtiği hâlde paylaşılmamış gönderi(ler): $(echo $g)"
+            exit 1
+          fi
+          echo "Gecikmiş paylaşım yok."

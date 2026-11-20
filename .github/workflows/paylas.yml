@@ -11,6 +11,7 @@ on:
 permissions:
   contents: write
   pages: write
+  issues: write
 concurrency:
   group: paylasim
   cancel-in-progress: false
@@ -49,3 +50,9 @@ jobs:
             git commit -q -m "Paylaşım durumu"
             for i in 1 2 3 4; do git pull -q --rebase && git push -q && break; sleep 5; done
           fi
+      - name: Hata uyarısı
+        if: failure() && steps.kontrol.outputs.var == '1'
+        env:
+          REPO: ${{ github.repository }}
+        run: |
+          oto/uyari.sh "Paylaşım hatası" "Paylaşım işi hata verdi: ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }} . Ayrıntı: oto/kayitlar/otopaylasim.log ve oto/durum.json (son_hata)."
