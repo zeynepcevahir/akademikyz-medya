@@ -1,0 +1,45 @@
+# Eski Osmanlıca Instagram gönderilerini YouTube Shorts olarak geriye dönük yükler.
+# Nöbetçi yoğun saatlerde tetikler; saat/gün sınırlarını betik kendisi uygular.
+name: YouTube geriye dönük
+on:
+  workflow_dispatch:
+    inputs:
+      zorla:
+        description: "Saat sınırını yok say (deneme için)"
+        type: boolean
+        default: false
+permissions:
+  contents: write
+  issues: write
+concurrency:
+  group: paylasim
+  cancel-in-progress: false
+jobs:
+  geriye:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    env:
+      TZ: Europe/Istanbul
+      GH_TOKEN: ${{ github.token }}
+      REPO: ${{ github.repository }}
+    steps:
+      - uses: actions/checkout@v4
+      - name: Hazırlık
+        run: |
+          sudo apt-get install -y -qq ffmpeg >/dev/null
+          pip install -q requests
+          git config user.name "OtoPaylasim"
+          git config user.email "noreply@anthropic.com"
+      - name: Yükle
+        env:
+          IG_TOKEN: ${{ secrets.IG_TOKEN }}
+          YT_CLIENT_ID: ${{ secrets.YT_CLIENT_ID }}
+          YT_CLIENT_SECRET: ${{ secrets.YT_CLIENT_SECRET }}
+          YT_OSM_TOKEN: ${{ secrets.YT_OSM_TOKEN }}
+          YT_HASBIHAL_TOKEN: ${{ secrets.YT_HASBIHAL_TOKEN }}
+          GERIYE_ZORLA: ${{ inputs.zorla && '1' || '0' }}
+        run: python3 oto/geriye_donuk.py
+      - name: Hata uyarısı
+        if: failure()
+        run: |
+          oto/uyari.sh "YouTube geriye dönük yükleme hatası" "Geriye dönük yükleme hata verdi: ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}"

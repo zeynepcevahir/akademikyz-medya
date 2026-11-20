@@ -44,6 +44,13 @@ jobs:
                 gh workflow run paylas.yml -R "$REPO" --ref main && son_tetik=$(date +%s)
               fi
             fi
+            # YouTube geriye dönük yükleme: yoğun saatlerde yarım saatte bir dürt (sınırları betik uygular).
+            dk=$((10#$(date +%H)*60 + 10#$(date +%M))); gun=$(date +%u)
+            if { [ "$gun" -le 5 ] && [ $dk -ge 1080 ] && [ $dk -lt 1140 ]; } || { [ "$gun" -ge 6 ] && [ $dk -ge 750 ] && [ $dk -lt 810 ]; }; then
+              if [ $(( $(date +%s) - ${son_geriye:-0} )) -ge 1700 ]; then
+                gh workflow run geriye.yml -R "$REPO" --ref main && son_geriye=$(date +%s)
+              fi
+            fi
             # Saati 60 dk'dan fazla geçmiş gönderi varsa (her biri için bu nöbette bir kez) uyar.
             for g in $(oto/gecikme_kontrol.sh); do
               case " $uyarilan " in *" $g "*) continue;; esac

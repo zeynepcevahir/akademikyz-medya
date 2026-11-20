@@ -18,6 +18,8 @@ import sys
 import time
 from pathlib import Path
 
+sys.path.insert(0, str(Path(__file__).resolve().parent))
+
 import requests
 
 EV = Path(__file__).resolve().parent
@@ -140,6 +142,17 @@ def main():
             continue  # tek videolu Reel değil
         metin = (klasor / "metin.txt").read_text(encoding="utf-8") if (klasor / "metin.txt").exists() else ""
         baslik, aciklama, etiketler = baslik_aciklama(metin)
+        try:
+            import yt_ortak
+            mevcut = yt_ortak.youtube_da_var_mi(metin, yt_ortak.yt_videolar(erisim_anahtari(yenileme), sinir=50))
+        except Exception:
+            mevcut = None
+        if mevcut:
+            yt[ozet] = {"klasor": kayit["klasor"], "hesap": hesap, "durum": "yuklendi", "video_id": mevcut,
+                        "not": "kanalda zaten vardı"}
+            log(f"{kayit['klasor']}: kanalda zaten var ({mevcut}); yüklenmedi.")
+            kaydet(yt, kayit["klasor"] + " zaten var")
+            continue
         deneme = onceki.get("deneme", 0) + 1
         yt[ozet] = {"klasor": kayit["klasor"], "hesap": hesap, "durum": "yukleniyor", "deneme": deneme,
                     "baslama": simdi.isoformat(timespec="seconds")}
