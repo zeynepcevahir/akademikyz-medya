@@ -32,7 +32,21 @@ def pencerede(t):
         return 12 * 60 + 30 <= dk < 13 * 60 + 30
     return 18 * 60 <= dk < 19 * 60
 TR = dt.timezone(dt.timedelta(hours=3))
-VF = "scale=1080:1920:force_original_aspect_ratio=decrease,pad=1080:1920:(ow-iw)/2:(oh-ih)/2:color=black,setsar=1,fps=30"
+# Dikey (9:16) kaynak tam ekran; diğerleri bulanık arka plan üstünde, YouTube'un alt yazı/buton alanlarından uzak.
+TAM = "scale=1080:1920:force_original_aspect_ratio=increase,crop=1080:1920,setsar=1,fps=30"
+GUVENLI = ("split[a][b];[a]scale=1080:1920:force_original_aspect_ratio=increase,crop=1080:1920,boxblur=40:4,"
+           "eq=brightness=-0.18[bg];[b]scale=900:1150:force_original_aspect_ratio=decrease[fg];"
+           "[bg][fg]overlay=(W-w)/2:max(240\\,(1380-h)/2+60),setsar=1,fps=30")
+
+
+def filtre(kaynak):
+    olcu = subprocess.run(["ffprobe", "-v", "error", "-select_streams", "v:0", "-show_entries",
+                           "stream=width,height", "-of", "csv=p=0", str(kaynak)], capture_output=True, text=True).stdout
+    try:
+        g, y = [int(x) for x in olcu.strip().split(",")[:2]]
+    except ValueError:
+        return GUVENLI
+    return TAM if y / g > 1.7 else GUVENLI
 
 
 def log(m):
@@ -75,11 +89,11 @@ def parca(kalem, i, gecici, sure_foto):
                                        "stream=index", "-of", "csv=p=0", str(kaynak)],
                                       capture_output=True, text=True).stdout.strip())
         ses = ["-map", "0:a:0"] if ses_var else ["-map", "1:a", "-shortest"]
-        ff("-i", str(kaynak), *sessiz, "-filter_complex", f"[0:v]{VF}[v]", "-map", "[v]", *ses,
+        ff("-i", str(kaynak), *sessiz, "-filter_complex", f"[0:v]{filtre(kaynak)}[v]", "-map", "[v]", *ses,
            "-t", "59", "-c:v", "libx264", "-pix_fmt", "yuv420p", "-c:a", "aac", "-ar", "44100", "-ac", "2", str(cikti))
     else:
-        ff("-loop", "1", "-t", str(sure_foto), "-i", str(kaynak), *sessiz, "-vf",
-           VF + ",zoompan=z='min(zoom+0.0007,1.08)':d=1:s=1080x1920:fps=30", "-shortest",
+        ff("-loop", "1", "-t", str(sure_foto), "-i", str(kaynak), *sessiz, "-filter_complex",
+           f"[0:v]{filtre(kaynak)}[v]", "-map", "[v]", "-map", "1:a", "-shortest",
            "-c:v", "libx264", "-pix_fmt", "yuv420p", "-c:a", "aac", "-ar", "44100", "-ac", "2", str(cikti))
     return cikti
 

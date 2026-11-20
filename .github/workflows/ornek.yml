@@ -1,0 +1,24 @@
+# Geriye dönük Shorts görünüm örnekleri (elle başlatılır, YouTube'a yüklemez).
+name: Shorts örnekleri
+on:
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  ornek:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Örnek üret
+        env:
+          IG_TOKEN: ${{ secrets.IG_TOKEN }}
+        run: |
+          sudo apt-get -qq update && sudo apt-get -qq install -y ffmpeg >/dev/null
+          pip install -q requests
+          python3 oto/geriye_ornek.py
+      - uses: actions/upload-artifact@v4
+        with:
+          name: ornek
+          path: |
+            ornek/*.mp4
+            ornek/*.png
