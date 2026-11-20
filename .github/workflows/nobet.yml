@@ -1,0 +1,46 @@
+# Nöbetçi: GitHub'ın zamanlanmış çalışmaları saatlerce gecikebildiği için
+# bu iş ~5 saat 40 dk açık kalır, 5 dakikada bir kuyruğa bakar, zamanı gelen
+# gönderi varsa "Instagram paylaşımı" iş akışını tetikler. Bitince kendini
+# yeniden başlatır. Saatlik cron yalnızca zincir koparsa yedektir.
+# Depo herkese açık olduğu için GitHub Actions dakikaları ücretsizdir.
+name: Nöbetçi
+on:
+  schedule:
+    - cron: "17 * * * *"
+  workflow_dispatch:
+permissions:
+  actions: write
+  contents: read
+concurrency:
+  group: nobetci
+  cancel-in-progress: false
+jobs:
+  nobet:
+    runs-on: ubuntu-latest
+    timeout-minutes: 350
+    env:
+      GH_TOKEN: ${{ github.token }}
+      REPO: ${{ github.repository }}
+      TZ: Europe/Istanbul
+    steps:
+      - name: Nöbet
+        run: |
+          bitis=$(( $(date +%s) + 5*3600 + 40*60 ))
+          son_tetik=0
+          while [ "$(date +%s)" -lt "$bitis" ]; do
+            simdi=$(date +%Y-%m-%d_%H%M)
+            vadeli=$(gh api "repos/$REPO/contents/kuyruk" --jq '.[] | select(.type=="dir") | .name' 2>/dev/null \
+              | grep -E '^[0-9]{4}-[0-9]{2}-[0-9]{2}_[0-9]{4}_' \
+              | awk -v s="$simdi" 'substr($0,1,15) <= s' | head -1 || true)
+            if [ -n "$vadeli" ] && [ $(( $(date +%s) - son_tetik )) -ge 570 ]; then
+              calisan=$(gh run list -R "$REPO" -w paylas.yml -L 5 --json status --jq '[.[]|select(.status!="completed")]|length' 2>/dev/null || echo 1)
+              if [ "$calisan" = "0" ]; then
+                echo "$(date '+%d.%m %H:%M') zamanı gelen: $vadeli -> paylaşım tetiklendi"
+                gh workflow run paylas.yml -R "$REPO" --ref main && son_tetik=$(date +%s)
+              fi
+            fi
+            sleep 300
+          done
+      - name: Nöbeti devret
+        if: always()
+        run: gh workflow run nobet.yml -R "$REPO" --ref main
