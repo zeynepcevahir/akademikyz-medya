@@ -55,6 +55,11 @@ def kaydet(veri, not_):
 
 
 def erisim_anahtari(yenileme):
+    import yt_ortak
+    return yt_ortak.erisim(yenileme)
+
+
+def _eski_erisim_anahtari(yenileme):
     r = requests.post("https://oauth2.googleapis.com/token", data={
         "client_id": os.environ["YT_CLIENT_ID"], "client_secret": os.environ["YT_CLIENT_SECRET"],
         "refresh_token": yenileme, "grant_type": "refresh_token"}, timeout=30)

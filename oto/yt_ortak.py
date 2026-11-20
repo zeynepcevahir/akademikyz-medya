@@ -13,7 +13,23 @@ def benzerlik(a, b):
         return 0.0
     return max(difflib.SequenceMatcher(None, a, b).ratio(), difflib.SequenceMatcher(None, a[:80], b[:80]).ratio())
 
+BEKLENEN_KANAL = {"YT_OSM_TOKEN": "Şarkılarla Osmanlıca", "YT_HASBIHAL_TOKEN": "Osmanlıca Hasbihal"}
+
+
 def erisim(yenileme):
+    """Erişim anahtarı döner; anahtar yanlış kanala aitse (ör. kişisel kanal) hata verir."""
+    anahtar = _erisim(yenileme)
+    beklenen = next((k for g, k in BEKLENEN_KANAL.items() if os.environ.get(g) == yenileme), None)
+    if beklenen:
+        r = requests.get("https://www.googleapis.com/youtube/v3/channels", timeout=30,
+                         headers={"Authorization": "Bearer " + anahtar}, params={"part": "snippet", "mine": "true"})
+        ad = (r.json().get("items") or [{}])[0].get("snippet", {}).get("title", "")
+        if ad.casefold() != beklenen.casefold():
+            raise RuntimeError(f"Google yetkisi yanlış kanala ait ('{ad}', beklenen '{beklenen}'); işlem yapılmadı.")
+    return anahtar
+
+
+def _erisim(yenileme):
     r = requests.post("https://oauth2.googleapis.com/token", data={
         "client_id": os.environ["YT_CLIENT_ID"], "client_secret": os.environ["YT_CLIENT_SECRET"],
         "refresh_token": yenileme, "grant_type": "refresh_token"}, timeout=30)
