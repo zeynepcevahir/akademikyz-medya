@@ -5,3 +5,32 @@
 2026-11-20 04:02:21,315 | API isteği: POST https://graph.facebook.com/v24.0/17841444113113164/media_publish
 2026-11-20 04:02:25,469 | API isteği: GET https://graph.facebook.com/v24.0/17958621717336274
 2026-11-20 04:02:25,650 | 2026-11-20_0400_hasbihal_sukut: paylaşım yayınlandı; medya kimliği: 17958621717336274.
+2026-11-20 19:40:34,211 | API isteği: POST https://graph.facebook.com/v24.0/17841463028324015/media
+2026-11-20 19:40:38,448 | API isteği: GET https://graph.facebook.com/v24.0/17945292387100945
+2026-11-20 19:40:40,655 | API isteği: GET https://graph.facebook.com/v24.0/17945292387100945
+2026-11-20 19:40:40,918 | API isteği: POST https://graph.facebook.com/v24.0/17841463028324015/media
+2026-11-20 19:40:44,302 | API isteği: GET https://graph.facebook.com/v24.0/17945292405100945
+2026-11-20 19:40:46,494 | API isteği: GET https://graph.facebook.com/v24.0/17945292405100945
+2026-11-20 19:40:46,728 | API isteği: POST https://graph.facebook.com/v24.0/17841463028324015/media
+2026-11-20 19:40:50,270 | API isteği: GET https://graph.facebook.com/v24.0/17945292426100945
+2026-11-20 19:40:52,466 | API isteği: GET https://graph.facebook.com/v24.0/17945292426100945
+2026-11-20 19:40:52,694 | API isteği: POST https://graph.facebook.com/v24.0/17841463028324015/media
+2026-11-20 19:40:56,051 | API isteği: GET https://graph.facebook.com/v24.0/17945292450100945
+2026-11-20 19:40:58,281 | API isteği: GET https://graph.facebook.com/v24.0/17945292450100945
+2026-11-20 19:40:58,543 | API isteği: POST https://graph.facebook.com/v24.0/17841463028324015/media
+2026-11-20 19:41:01,800 | API isteği: GET https://graph.facebook.com/v24.0/17945292471100945
+2026-11-20 19:41:03,964 | API isteği: GET https://graph.facebook.com/v24.0/17945292471100945
+2026-11-20 19:41:04,210 | API isteği: POST https://graph.facebook.com/v24.0/17841463028324015/media
+2026-11-20 19:41:08,221 | API isteği: GET https://graph.facebook.com/v24.0/17945292492100945
+2026-11-20 19:41:10,548 | API isteği: GET https://graph.facebook.com/v24.0/17945292492100945
+2026-11-20 19:41:11,477 | API isteği: POST https://graph.facebook.com/v24.0/17841463028324015/media
+2026-11-20 19:41:14,330 | API isteği: GET https://graph.facebook.com/v24.0/17945292510100945
+2026-11-20 19:41:16,504 | API isteği: GET https://graph.facebook.com/v24.0/17945292510100945
+2026-11-20 19:41:16,773 | API isteği: POST https://graph.facebook.com/v24.0/17841463028324015/media
+2026-11-20 19:41:20,104 | API isteği: GET https://graph.facebook.com/v24.0/17945292540100945
+2026-11-20 19:41:22,307 | API isteği: GET https://graph.facebook.com/v24.0/17945292540100945
+2026-11-20 19:41:22,578 | API isteği: POST https://graph.facebook.com/v24.0/17841463028324015/media_publish
+2026-11-20 19:41:27,230 | API isteği: GET https://graph.facebook.com/v24.0/18143399497623379
+2026-11-20 19:41:27,477 | 2026-11-20_1930_tr_literatur-karuseli: paylaşım yayınlandı; medya kimliği: 18143399497623379.
+2026-11-20 19:41:35,432 | Uzak dosya temizlenemedi; günlük artık temizliği tekrar deneyecek: 445c0b9ff8b04ad99e8e8ddca9aae38c.jpg
+2026-11-20 19:41:46,883 | Uzak dosya temizlenemedi; günlük artık temizliği tekrar deneyecek: 7b6dd50dd25042e4aebd94b6eac99e85.jpg
