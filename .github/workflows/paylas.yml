@@ -42,10 +42,18 @@ jobs:
         if: steps.kontrol.outputs.var == '1'
         run: |
           if [ "${{ inputs.yukleme_dene }}" = "true" ]; then python3 oto/otopaylasim.py yukleme-dene; else python3 oto/otopaylasim.py calistir; fi
+      - name: YouTube Shorts
+        if: always() && steps.kontrol.outputs.var == '1'
+        env:
+          YT_CLIENT_ID: ${{ secrets.YT_CLIENT_ID }}
+          YT_CLIENT_SECRET: ${{ secrets.YT_CLIENT_SECRET }}
+          YT_OSM_TOKEN: ${{ secrets.YT_OSM_TOKEN }}
+          YT_HASBIHAL_TOKEN: ${{ secrets.YT_HASBIHAL_TOKEN }}
+        run: python3 oto/youtube.py
       - name: Durumu kaydet
         if: always() && steps.kontrol.outputs.var == '1'
         run: |
-          git add -A oto/durum.json kuyruk oto/kayitlar 2>/dev/null || true
+          git add -A oto/durum.json oto/youtube_durum.json kuyruk oto/kayitlar 2>/dev/null || true
           if ! git diff --cached --quiet; then
             git commit -q -m "Paylaşım durumu"
             for i in 1 2 3 4; do git pull -q --rebase && git push -q && break; sleep 5; done
