@@ -19,7 +19,7 @@ import yt_ortak  # noqa: E402
 DURUM = EV / "yorum_durum.json"
 GUN = 7
 SINIR = 15
-YT = {"osm": "YT_OSM_TOKEN", "hasbihal": "YT_HASBIHAL_TOKEN"}
+YT = {"osm": "YT_OSM_TOKEN", "hasbihal": "YT_HASBIHAL_TOKEN", "tez": "YT_TEZ_TOKEN"}
 
 SABLON = {
     "tr": ["Çok teşekkürler! 🙌 Yazmaya devam 💪", "Ne güzel, teşekkür ederiz! Kaydetmeyi unutma 📌",
@@ -28,6 +28,8 @@ SABLON = {
            "Thanks a lot 🙏 See you in the next post!"],
     "osm": ["Eline, gönlüne sağlık 🌿", "Çok teşekkürler, güzel kalpli dinleyicimiz 🎶",
             "Ne güzel! Sıradaki şarkıda da bekleriz 🎶", "Teşekkürler 🌿 Harfleri tekrar etmeyi unutma!"],
+    "tez": ["İlginiz için teşekkürler 📚", "Ne güzel, teşekkür ederiz! Sıradaki tezde görüşmek üzere 🙏",
+            "Teşekkürler 🙏 Tanıtılmasını istediğiniz tezleri de yazabilirsiniz.", "Çok sevindik, kaydetmeyi unutmayın 📌"],
     "hasbihal": ["Eline, gönlüne sağlık 🌿", "Ne güzel okudun, tebrikler ✍️", "Teşekkürler, hasbihale hoş geldin 🌿",
                  "Çok sevindik 🌿 Sıradaki kelimede de bekleriz!"],
 }

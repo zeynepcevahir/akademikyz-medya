@@ -49,6 +49,7 @@ jobs:
           YT_CLIENT_SECRET: ${{ secrets.YT_CLIENT_SECRET }}
           YT_OSM_TOKEN: ${{ secrets.YT_OSM_TOKEN }}
           YT_HASBIHAL_TOKEN: ${{ secrets.YT_HASBIHAL_TOKEN }}
+          YT_TEZ_TOKEN: ${{ secrets.YT_TEZ_TOKEN }}
         run: python3 oto/youtube.py
       - name: Durumu kaydet
         if: always() && steps.kontrol.outputs.var == '1'

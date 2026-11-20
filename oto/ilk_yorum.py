@@ -26,6 +26,12 @@ HAVUZ = {
         "Bu şarkıyı seven birini etiketle 🎶",
         "Hangi harfi okumakta zorlandın? Bir sonraki videoda onu açalım.",
     ],
+    "tez": [
+        "Bu tezde seni en çok ne düşündürdü? Yoruma yaz 👇",
+        "Kendi alanından tanıtılmasını istediğin bir tez var mı? Tez numarasını yorumlara bırak 📚",
+        "Bu konuda çalışan bir arkadaşını etiketle 🤝",
+        "Kaydet, kaynakçana eklemek için geri dön 📌",
+    ],
     "hasbihal": [
         "Bu kelimeyi nasıl okurdun? Okuyuşunu yoruma yaz 👇",
         "Bu cümlede sana en yakın kelime hangisi? 💭",

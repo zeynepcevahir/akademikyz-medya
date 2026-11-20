@@ -13,7 +13,8 @@ def benzerlik(a, b):
         return 0.0
     return max(difflib.SequenceMatcher(None, a, b).ratio(), difflib.SequenceMatcher(None, a[:80], b[:80]).ratio())
 
-BEKLENEN_KANAL = {"YT_OSM_TOKEN": "Şarkılarla Osmanlıca", "YT_HASBIHAL_TOKEN": "Osmanlıca Hasbihal"}
+BEKLENEN_KANAL = {"YT_OSM_TOKEN": "Şarkılarla Osmanlıca", "YT_HASBIHAL_TOKEN": "Osmanlıca Hasbihal",
+                  "YT_TEZ_TOKEN": "Tez Vitrini"}
 
 
 def erisim(yenileme):

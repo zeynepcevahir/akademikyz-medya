@@ -12,7 +12,7 @@ Tarayıcı açılır; doğru kanalı seçip izin verin. Anahtar GitHub gizli ala
 import glob, http.server, json, os, secrets, shutil, subprocess, sys, urllib.parse, urllib.request, webbrowser
 
 DEPO = "zeynepcevahir/akademikyz-medya"
-GIZLI = {"osm": "YT_OSM_TOKEN", "hasbihal": "YT_HASBIHAL_TOKEN"}
+GIZLI = {"osm": "YT_OSM_TOKEN", "hasbihal": "YT_HASBIHAL_TOKEN", "tez": "YT_TEZ_TOKEN"}
 KAPSAM = "https://www.googleapis.com/auth/youtube.upload https://www.googleapis.com/auth/youtube.readonly https://www.googleapis.com/auth/youtube.force-ssl"
 
 if len(sys.argv) != 2 or sys.argv[1] not in GIZLI:
@@ -60,7 +60,7 @@ istek = urllib.request.Request("https://www.googleapis.com/youtube/v3/channels?p
                                headers={"Authorization": "Bearer " + t["access_token"]})
 kanallar = json.load(urllib.request.urlopen(istek)).get("items", [])
 print("Bağlanan kanal:", ", ".join(k["snippet"]["title"] for k in kanallar) or "(kanal bulunamadı!)")
-BEKLENEN = {"osm": "Şarkılarla Osmanlıca", "hasbihal": "Osmanlıca Hasbihal"}[hesap]
+BEKLENEN = {"osm": "Şarkılarla Osmanlıca", "hasbihal": "Osmanlıca Hasbihal", "tez": "Tez Vitrini"}[hesap]
 if not any(k["snippet"]["title"].strip() == BEKLENEN for k in kanallar):
     sys.exit(f"YANLIŞ KANAL: '{BEKLENEN}' seçilmeliydi. Hiçbir şey kaydedilmedi; tekrar çalıştırıp doğru kanalı seçin.")
 

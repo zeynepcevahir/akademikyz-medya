@@ -26,7 +26,7 @@ EV = Path(__file__).resolve().parent
 KUYRUK = EV.parent / "kuyruk"
 DURUM = EV / "durum.json"
 YT_DURUM = EV / "youtube_durum.json"
-HESAPLAR = {"osm": "YT_OSM_TOKEN", "hasbihal": "YT_HASBIHAL_TOKEN"}
+HESAPLAR = {"osm": "YT_OSM_TOKEN", "hasbihal": "YT_HASBIHAL_TOKEN", "tez": "YT_TEZ_TOKEN"}
 EN_ESKI = dt.timedelta(days=3)  # bundan eski Instagram yayınları yüklenmez (geriye dönük yığılma olmasın)
 DENEME_SINIRI = 3
 
@@ -137,16 +137,28 @@ def main():
             klasor = KUYRUK / "yayinlandi" / kayit["klasor"]
         if not klasor.is_dir():
             klasor = KUYRUK / kayit["klasor"]
-        videolar = sorted(klasor.glob("*.mp4")) + sorted(klasor.glob("*.mov")) if klasor.is_dir() else []
+        yt_klasor = klasor / "youtube"  # Tez Vitrini: Instagram karusel, YouTube'a ayrı Shorts videosu
+        if yt_klasor.is_dir():
+            videolar = sorted(yt_klasor.glob("*.mp4")) + sorted(yt_klasor.glob("*.mov"))
+        else:
+            videolar = sorted(klasor.glob("*.mp4")) + sorted(klasor.glob("*.mov")) if klasor.is_dir() else []
         ayar = (klasor / "ayar.txt").read_text(encoding="utf-8") if (klasor / "ayar.txt").exists() else ""
         if "elle" in kayit["klasor"] or re.search(r"(?im)^youtube\s*=\s*hayir", ayar):
             yt[ozet] = {"klasor": kayit["klasor"], "durum": "atlandi"}
             kaydet(yt, kayit["klasor"] + " atlandı")
             continue
-        if len(videolar) != 1 or len(list(klasor.glob("*.[jp][pn]g"))):
+        if len(videolar) != 1 or (not yt_klasor.is_dir() and len(list(klasor.glob("*.[jp][pn]g")))):
             continue  # tek videolu Reel değil
         metin = (klasor / "metin.txt").read_text(encoding="utf-8") if (klasor / "metin.txt").exists() else ""
         baslik, aciklama, etiketler = baslik_aciklama(metin)
+        ozel = yt_klasor / "aciklama.txt"  # ilk satır başlık, kalanı açıklama (bağlantılar burada olabilir)
+        if ozel.is_file():
+            satirlar = ozel.read_text(encoding="utf-8").strip().split("\n", 1)
+            baslik = re.sub(r"[<>]", "", satirlar[0]).strip()[:95]
+            if "#shorts" not in baslik.lower():
+                baslik = (baslik[:86] + " #Shorts")
+            aciklama = re.sub(r"[<>]", "", satirlar[1] if len(satirlar) > 1 else metin).strip()[:4900]
+            etiketler = re.findall(r"#(\w+)", aciklama)[:15]
         try:
             import yt_ortak
             mevcut = yt_ortak.youtube_da_var_mi(metin, yt_ortak.yt_videolar(erisim_anahtari(yenileme), sinir=50))
