@@ -107,6 +107,8 @@ def main():
     if not (os.environ.get("YT_CLIENT_ID") and os.environ.get("IG_TOKEN")):
         log("YouTube bağlantısı yok; atlandı.")
         return 0
+    if not (EV / "geriye_acik").exists():
+        log("Geriye dönük yükleme henüz açılmadı (eşleştirme listesi kontrol ediliyor)."); return 0
     simdi = dt.datetime.now(TR)
     kayit = json.loads(KAYIT.read_text(encoding="utf-8")) if KAYIT.exists() else {}
     bugun = [v for v in kayit.values() if v.get("durum") in ("yuklendi", "yukleniyor")
