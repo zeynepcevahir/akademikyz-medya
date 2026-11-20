@@ -1150,6 +1150,8 @@ class Application:
                 name = uuid.uuid4().hex + ".txt"
                 try:
                     url = uploader.upload(path, name)
+                    if hasattr(uploader, "finalize"):
+                        uploader.finalize()
                     response = self.http.request("GET", url)
                     if response.status_code != 200 or response.content != content:
                         raise RequestError("Test dosyası genel adresten HTTP 200 ve aynı içerikle indirilemedi.")

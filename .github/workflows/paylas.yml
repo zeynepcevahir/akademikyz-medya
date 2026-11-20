@@ -3,6 +3,11 @@ on:
   schedule:
     - cron: "*/10 * * * *"
   workflow_dispatch:
+    inputs:
+      yukleme_dene:
+        description: "Yalnızca görsel yükleme denemesi yap"
+        type: boolean
+        default: false
 permissions:
   contents: write
   pages: write
@@ -23,6 +28,7 @@ jobs:
       - name: Kuyrukta iş var mı?
         id: kontrol
         run: |
+          if [ "${{ inputs.yukleme_dene }}" = "true" ]; then echo "var=1" >> "$GITHUB_OUTPUT"; fi
           if ls kuyruk | grep -Eq '^[0-9]{4}-[0-9]{2}-[0-9]{2}_[0-9]{4}_'; then echo "var=1" >> "$GITHUB_OUTPUT"; fi
       - name: Hazırlık
         if: steps.kontrol.outputs.var == '1'
@@ -33,7 +39,8 @@ jobs:
           git config user.email "noreply@anthropic.com"
       - name: Paylaş
         if: steps.kontrol.outputs.var == '1'
-        run: python3 oto/otopaylasim.py calistir
+        run: |
+          if [ "${{ inputs.yukleme_dene }}" = "true" ]; then python3 oto/otopaylasim.py yukleme-dene; else python3 oto/otopaylasim.py calistir; fi
       - name: Durumu kaydet
         if: always() && steps.kontrol.outputs.var == '1'
         run: |
