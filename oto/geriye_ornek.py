@@ -10,6 +10,12 @@ CIKTI.mkdir(exist_ok=True)
 ayar = tomllib.loads((EV / "ayar.toml").read_text(encoding="utf-8"))
 secim = []
 hb = ig_medya(ayar["hesaplar"]["hasbihal"]["ig_id"])
+if os.environ.get("HAM") == "1":  # Hasbihal fotoğraflarının asıllarını indir (filigran incelemesi)
+    from geriye_donuk import indir
+    (CIKTI / "ham").mkdir(exist_ok=True)
+    for i, m in enumerate(x for x in hb if x["media_type"] == "IMAGE"):
+        indir(m["media_url"], CIKTI / "ham" / f"{i:02d}_{m['timestamp'][:10]}_{m['id']}.jpg")
+    sys.exit(0)
 for tur in ("IMAGE", "CAROUSEL_ALBUM", "VIDEO"):
     secim += [("hasbihal", m) for m in hb if m["media_type"] == tur][:1]
 osm = ig_medya(ayar["hesaplar"]["osm"]["ig_id"])

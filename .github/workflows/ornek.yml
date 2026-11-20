@@ -2,6 +2,10 @@
 name: Shorts örnekleri
 on:
   workflow_dispatch:
+    inputs:
+      ham:
+        description: Hasbihal fotoğraf asılları
+        default: "0"
 permissions:
   contents: write
 jobs:
@@ -12,6 +16,7 @@ jobs:
       - name: Örnek üret
         env:
           IG_TOKEN: ${{ secrets.IG_TOKEN }}
+          HAM: ${{ inputs.ham }}
         run: |
           sudo apt-get -qq update && sudo apt-get -qq install -y ffmpeg >/dev/null
           pip install -q requests
@@ -24,6 +29,6 @@ jobs:
             ornek/*.png
       - name: Örnekleri "ornek" dalına koy
         run: |
-          cd ornek && rm -rf g* && git init -q -b ornek && git add . \
+          cd ornek && rm -rf g[0-9]* && git init -q -b ornek && git add . \
             && git -c user.name=OtoPaylasim -c user.email=noreply@anthropic.com commit -qm "Shorts örnekleri" \
             && git push -qf "https://x-access-token:${{ github.token }}@github.com/${{ github.repository }}" ornek
