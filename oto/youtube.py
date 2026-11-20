@@ -167,6 +167,8 @@ def main():
             yt[ozet].update(durum="yuklendi", video_id=vid, gizlilik=gizlilik,
                             adres=f"https://youtube.com/shorts/{vid}")
             log(f"{kayit['klasor']}: YouTube'a yüklendi: https://youtube.com/shorts/{vid} ({gizlilik})")
+            import yt_ortak
+            yt[ozet]["ilk_yorum"] = yt_ortak.ilk_yorum(anahtar, vid, hesap)
             if gizlilik and gizlilik != "public":
                 log("UYARI: YouTube videoyu herkese açık yapmadı (API projesi henüz denetimden geçmemiş olabilir).")
         except ValueError as e:  # yükleme hiç başlamadı: güvenle yeniden denenebilir

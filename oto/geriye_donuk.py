@@ -159,6 +159,7 @@ def main():
                     baslik, aciklama, etiketler = baslik_aciklama(metin or VARSAYILAN_BASLIK[hesap])
                     vid, gizlilik = yukle(anahtar, video, baslik, aciklama, etiketler)
                 kayit[m["id"]].update(durum="yuklendi", video_id=vid, gizlilik=gizlilik)
+                kayit[m["id"]]["ilk_yorum"] = yt_ortak.ilk_yorum(anahtar, vid, hesap)
                 log(f"{hesap}: {m['permalink']} -> https://youtube.com/shorts/{vid} ({gizlilik})")
                 sonuc = 0
             except (ValueError, subprocess.CalledProcessError, requests.HTTPError) as e:

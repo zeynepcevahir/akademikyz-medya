@@ -64,3 +64,18 @@ def depoya_yaz(yol, veri, not_):
         git("pull", "-q", "--rebase", "--autostash")
         time.sleep(3)
     return False
+
+
+def ilk_yorum(anahtar, video_id, hesap):
+    """Videoya kanal adına ilk yorumu ekler (force-ssl izni gerekir). Hata olursa None."""
+    import ilk_yorum as iy
+    mesaj = iy.sec(hesap, video_id)
+    if not mesaj:
+        return None
+    try:
+        r = requests.post("https://www.googleapis.com/youtube/v3/commentThreads?part=snippet", timeout=30,
+                          headers={"Authorization": "Bearer " + anahtar},
+                          json={"snippet": {"videoId": video_id, "topLevelComment": {"snippet": {"textOriginal": mesaj}}}})
+        return r.json().get("id") if r.status_code == 200 else None
+    except Exception:
+        return None

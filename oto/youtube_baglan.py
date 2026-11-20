@@ -13,7 +13,7 @@ import glob, http.server, json, os, secrets, shutil, subprocess, sys, urllib.par
 
 DEPO = "zeynepcevahir/akademikyz-medya"
 GIZLI = {"osm": "YT_OSM_TOKEN", "hasbihal": "YT_HASBIHAL_TOKEN"}
-KAPSAM = "https://www.googleapis.com/auth/youtube.upload https://www.googleapis.com/auth/youtube.readonly"
+KAPSAM = "https://www.googleapis.com/auth/youtube.upload https://www.googleapis.com/auth/youtube.readonly https://www.googleapis.com/auth/youtube.force-ssl"
 
 if len(sys.argv) != 2 or sys.argv[1] not in GIZLI:
     sys.exit("Kullanım: python3 youtube_baglan.py osm|hasbihal")

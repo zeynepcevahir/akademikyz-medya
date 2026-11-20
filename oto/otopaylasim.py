@@ -1075,6 +1075,16 @@ class Application:
                             self.state.save()
                         except Exception:
                             self.logger.warning("%s: yayın başarılı, kalıcı bağlantı alınamadı.", post.candidate.path.name)
+                        # İlk yorum (etkileşim için); hata yayını etkilemez.
+                        try:
+                            import ilk_yorum
+                            mesaj = ilk_yorum.sec(account, post.candidate.path.name)
+                            if mesaj and not record.get("ilk_yorum"):
+                                cevap = api.call("POST", f"{media_id}/comments", message=mesaj)
+                                record["ilk_yorum"] = cevap.get("id", "") or "gonderildi"
+                                self.state.save()
+                        except Exception:
+                            self.logger.warning("%s: ilk yorum eklenemedi.", post.candidate.path.name)
                         self.logger.info("%s: paylaşım yayınlandı; medya kimliği: %s.", post.candidate.path.name, media_id)
                     finally:
                         self.cleanup_uploads(uploader, names)
