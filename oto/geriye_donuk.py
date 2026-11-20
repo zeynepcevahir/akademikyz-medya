@@ -82,6 +82,13 @@ def ff(*a):
 def parca(kalem, i, gecici, sure_foto):
     kaynak = Path(gecici) / f"k{i}"
     indir(kalem["media_url"], kaynak)
+    if kalem["media_type"] != "VIDEO":
+        try:
+            import filigran
+            if filigran.duzelt(kaynak):
+                log("Eski ad (@gizemliosmanlica) yeni adla örtüldü.")
+        except ImportError:
+            pass
     cikti = Path(gecici) / f"p{i}.mp4"
     sessiz = ["-f", "lavfi", "-i", "anullsrc=r=44100:cl=stereo"]
     if kalem["media_type"] == "VIDEO":

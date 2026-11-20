@@ -16,7 +16,7 @@ if os.environ.get("HAM") == "1":  # Hasbihal fotoğraflarının asıllarını in
     for i, m in enumerate(x for x in hb if x["media_type"] == "IMAGE"):
         indir(m["media_url"], CIKTI / "ham" / f"{i:02d}_{m['timestamp'][:10]}_{m['id']}.jpg")
     sys.exit(0)
-for tur in ("IMAGE", "CAROUSEL_ALBUM", "VIDEO"):
+for tur in ("IMAGE", "CAROUSEL_ALBUM", "VIDEO"):  # ilk IMAGE eski adlı gece şablonu
     secim += [("hasbihal", m) for m in hb if m["media_type"] == tur][:1]
 osm = ig_medya(ayar["hesaplar"]["osm"]["ig_id"])
 for ad, liste in (("hasbihal", hb), ("osm", osm)):

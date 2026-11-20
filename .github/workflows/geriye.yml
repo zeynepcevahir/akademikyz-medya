@@ -27,7 +27,7 @@ jobs:
       - name: Hazırlık
         run: |
           sudo apt-get install -y -qq ffmpeg >/dev/null
-          pip install -q requests
+          pip install -q requests pillow numpy
           git config user.name "OtoPaylasim"
           git config user.email "noreply@anthropic.com"
       - name: Yükle
