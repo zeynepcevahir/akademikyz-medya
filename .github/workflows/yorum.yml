@@ -1,0 +1,30 @@
+# Instagram ve YouTube yorumlarına ölçülü otomatik cevap (nöbetçi yarım saatte bir tetikler).
+name: Yorum cevapları
+on:
+  workflow_dispatch:
+permissions:
+  contents: write
+  issues: write
+concurrency:
+  group: yorum
+  cancel-in-progress: false
+jobs:
+  cevap:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    env:
+      GH_TOKEN: ${{ github.token }}
+      REPO: ${{ github.repository }}
+    steps:
+      - uses: actions/checkout@v4
+      - name: Cevapla
+        env:
+          IG_TOKEN: ${{ secrets.IG_TOKEN }}
+          YT_CLIENT_ID: ${{ secrets.YT_CLIENT_ID }}
+          YT_CLIENT_SECRET: ${{ secrets.YT_CLIENT_SECRET }}
+          YT_OSM_TOKEN: ${{ secrets.YT_OSM_TOKEN }}
+          YT_HASBIHAL_TOKEN: ${{ secrets.YT_HASBIHAL_TOKEN }}
+          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+        run: |
+          git config user.name "OtoPaylasim"; git config user.email "noreply@anthropic.com"
+          pip install -q requests && python3 oto/yorum_cevap.py
