@@ -1,2 +1,7 @@
 2026-11-20 03:24:03,876 | Yükleme denemesi başarılı; genel adres HTTP 200 ve doğru içerik döndürdü.
 2026-11-20 04:00:43,115 | 2026-11-20_0400_hasbihal_sukut: son 5 dakikada değişmiş; eşitleme beklenecek.
+2026-11-20 04:02:16,092 | API isteği: POST https://graph.facebook.com/v24.0/17841444113113164/media
+2026-11-20 04:02:21,041 | API isteği: GET https://graph.facebook.com/v24.0/18081734021470438
+2026-11-20 04:02:21,315 | API isteği: POST https://graph.facebook.com/v24.0/17841444113113164/media_publish
+2026-11-20 04:02:25,469 | API isteği: GET https://graph.facebook.com/v24.0/17958621717336274
+2026-11-20 04:02:25,650 | 2026-11-20_0400_hasbihal_sukut: paylaşım yayınlandı; medya kimliği: 17958621717336274.
