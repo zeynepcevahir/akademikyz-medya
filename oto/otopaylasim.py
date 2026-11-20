@@ -379,6 +379,9 @@ def scan_queue(queue):
 
 
 def syncing(path, now):
+    # Bulutta dosyalar her çalışmada yeni checkout edilir; eşitleme beklemesi yalnız Mac'te anlamlı.
+    if os.environ.get("GITHUB_ACTIONS"):
+        return False
     return any(now.timestamp() - p.stat().st_mtime < 300
                for p in [path, *path.rglob("*")])
 
