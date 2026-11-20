@@ -13,7 +13,13 @@ hb = ig_medya(ayar["hesaplar"]["hasbihal"]["ig_id"])
 for tur in ("IMAGE", "CAROUSEL_ALBUM", "VIDEO"):
     secim += [("hasbihal", m) for m in hb if m["media_type"] == tur][:1]
 osm = ig_medya(ayar["hesaplar"]["osm"]["ig_id"])
-secim += [("osm", m) for m in osm if m["media_type"] == "VIDEO"][-1:]
+for ad, liste in (("hasbihal", hb), ("osm", osm)):
+    def adresli(m):
+        return bool(m.get("media_url")) if m["media_type"] != "CAROUSEL_ALBUM" else any(
+            k.get("media_url") for k in m.get("children", {}).get("data", []))
+    eksik = [m["permalink"] for m in liste if not adresli(m)]
+    print(f"{ad}: {len(liste)} gönderi, indirilemeyen (medya adresi yok): {len(eksik)}", *eksik[:30], sep="\n  ")
+secim += [("osm", m) for m in osm if m["media_type"] == "VIDEO" and m.get("media_url")][-1:]
 for i, (hesap, m) in enumerate(secim):
     g = CIKTI / f"g{i}"
     g.mkdir(exist_ok=True)

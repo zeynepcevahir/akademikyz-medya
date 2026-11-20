@@ -154,7 +154,7 @@ def main():
         kullanilan = {v.get("video_id") for v in kayit.values()} | {v.get("video_id") for v in yeni_sistem.values()}
         for m in ig_medya(ayar["hesaplar"][hesap]["ig_id"]):
             onceki = kayit.get(m["id"], {})
-            if onceki.get("durum") in ("yuklendi", "yukleniyor", "atlandi", "hatali", "zaten_var"):
+            if onceki.get("durum") in ("yuklendi", "yukleniyor", "atlandi", "hatali", "zaten_var", "medya_yok"):
                 continue
             metin = m.get("caption") or ""
             var = yt_ortak.youtube_da_var_mi(metin, videolar, esik=0.45)
@@ -169,6 +169,10 @@ def main():
                 kullanilan.add(var)
                 continue
             if any(v.get("permalink") == m["permalink"] for v in yeni_sistem.values()):
+                continue
+            if not (m.get("media_url") or any(k.get("media_url") for k in m.get("children", {}).get("data", []))):
+                # Instagram telifli müzikli videoların dosyasını API'de vermiyor: atla, kaydet.
+                kayit[m["id"]] = {"hesap": hesap, "durum": "medya_yok", "permalink": m["permalink"]}
                 continue
             # Yükle
             kayit[m["id"]] = {"hesap": hesap, "durum": "yukleniyor", "permalink": m["permalink"],
