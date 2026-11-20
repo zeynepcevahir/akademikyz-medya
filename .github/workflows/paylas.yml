@@ -17,7 +17,7 @@ concurrency:
 jobs:
   paylas:
     runs-on: ubuntu-latest
-    timeout-minutes: 30
+    timeout-minutes: 45
     env:
       TZ: Europe/Istanbul
       OTOPAYLASIM_EV: oto

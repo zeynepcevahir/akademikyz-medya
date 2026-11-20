@@ -651,7 +651,7 @@ class GitHubPagesUploader:
             # GITHUB_TOKEN ile yapılan push Pages derlemesini tetiklemeyebilir; açıkça iste.
             self.run(["gh", "api", "-X", "POST", f"repos/{os.environ['GITHUB_REPOSITORY']}/pages/builds"],
                      capture_output=True, text=True, timeout=60)
-        deadline = time.monotonic() + 600
+        deadline = time.monotonic() + 1200
         for name in self.pending:
             while True:
                 try:
@@ -660,7 +660,7 @@ class GitHubPagesUploader:
                 except Exception:
                     pass
                 if time.monotonic() > deadline:
-                    raise RequestError("GitHub Pages medya adresi 10 dakikada açılmadı.")
+                    raise RequestError("GitHub Pages medya adresi 20 dakikada açılmadı.")
                 self.sleep(10)
         self.pending = []
 
