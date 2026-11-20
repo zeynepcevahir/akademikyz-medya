@@ -119,6 +119,14 @@ def main():
             log("Yükleme saati değil (hafta içi 18-19, hafta sonu 12:30-13:30)."); return 0
         if len(bugun) >= GUNLUK:
             log("Bugünkü geriye dönük yükleme sınırı doldu."); return 0
+    ozel = [v for v in kayit.values() if v.get("durum") == "yuklendi" and v.get("gizlilik") not in (None, "", "public")]
+    if ozel:
+        log("YouTube yüklenen videoyu 'özel' bıraktı (API denetimi bitmemiş). Geriye dönük yükleme duraklatıldı; "
+            "denetim onaylanınca özel videoları herkese açık yapıp kayıttaki gizlilik alanını güncelleyin.")
+        if os.environ.get("GITHUB_ACTIONS"):
+            subprocess.run([str(EV / "uyari.sh"), "YouTube geriye dönük yükleme duraklatıldı",
+                            "Yüklenen video özel kaldı (Google API denetimi bitmemiş). Denetim onaylanınca devam edilecek."])
+        return 0
     ayar = tomllib.loads((EV / "ayar.toml").read_text(encoding="utf-8"))
     yeni_sistem = json.loads((EV / "youtube_durum.json").read_text(encoding="utf-8")) if (EV / "youtube_durum.json").exists() else {}
     # Hesapları sırayla dene: bugün hangisi daha az yüklendiyse önce o.
