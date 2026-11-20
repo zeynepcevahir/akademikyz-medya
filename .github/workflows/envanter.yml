@@ -1,0 +1,23 @@
+# Osmanlıca hesapların Instagram ve YouTube içeriklerini karşılaştırır (yalnızca okur, elle başlatılır).
+name: Envanter
+on:
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  envanter:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Karşılaştır
+        env:
+          IG_TOKEN: ${{ secrets.IG_TOKEN }}
+          YT_CLIENT_ID: ${{ secrets.YT_CLIENT_ID }}
+          YT_CLIENT_SECRET: ${{ secrets.YT_CLIENT_SECRET }}
+          YT_OSM_TOKEN: ${{ secrets.YT_OSM_TOKEN }}
+          YT_HASBIHAL_TOKEN: ${{ secrets.YT_HASBIHAL_TOKEN }}
+        run: pip install -q requests && python3 oto/envanter.py
+      - uses: actions/upload-artifact@v4
+        with:
+          name: envanter
+          path: oto/envanter.json
