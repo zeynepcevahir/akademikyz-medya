@@ -1,0 +1,31 @@
+# YouTube anahtarlarının hangi kanala bağlı olduğunu denetler (yalnızca okur, elle başlatılır).
+name: YouTube kanal denetimi
+on:
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  denetim:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          sparse-checkout: oto
+      - name: Denetle
+        env:
+          YT_CLIENT_ID: ${{ secrets.YT_CLIENT_ID }}
+          YT_CLIENT_SECRET: ${{ secrets.YT_CLIENT_SECRET }}
+          YT_OSM_TOKEN: ${{ secrets.YT_OSM_TOKEN }}
+          YT_HASBIHAL_TOKEN: ${{ secrets.YT_HASBIHAL_TOKEN }}
+          YT_TEZ_TOKEN: ${{ secrets.YT_TEZ_TOKEN }}
+        run: |
+          pip install -q requests
+          cd oto && python3 -c "
+          import os, yt_ortak
+          for g in ('YT_OSM_TOKEN','YT_HASBIHAL_TOKEN','YT_TEZ_TOKEN'):
+              t = os.environ.get(g)
+              if not t: print('KANAL', g, 'yok'); continue
+              try:
+                  a = yt_ortak.erisim(t); print('KANAL', g, 'tamam', len(yt_ortak.yt_videolar(a, sinir=50)), 'video')
+              except Exception as e: print('KANAL', g, 'HATA', str(e)[:150])
+          "
