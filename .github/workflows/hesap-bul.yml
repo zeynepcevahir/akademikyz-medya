@@ -22,3 +22,6 @@ jobs:
           echo "== izinler =="
           curl -s "https://graph.facebook.com/v24.0/me/permissions?access_token=$IG_TOKEN" | python3 -c "import json,sys; d=json.load(sys.stdin); print('IZIN', [p['permission'] for p in d.get('data',[]) if p.get('status')=='granted'], d.get('error',{}).get('message','')[:150])"
           curl -s "https://graph.facebook.com/v24.0/me?fields=id,name&access_token=$IG_TOKEN" | python3 -c "import json,sys; d=json.load(sys.stdin); print('KIM', d.get('name'), d.get('error',{}).get('message','')[:150])"
+          for q in "me?fields=id,name,business" "me/businesses?fields=id,name" "me/assigned_business_asset_groups?fields=id,name" "me/assigned_pages?fields=id,name,business" "17841463028324015?fields=id,username,owner_business"; do
+            echo "SORGU $q"; curl -s "https://graph.facebook.com/v24.0/$q&access_token=$IG_TOKEN" | head -c 600; echo
+          done
