@@ -55,10 +55,11 @@ jobs:
       - name: Durumu kaydet
         if: always() && steps.kontrol.outputs.var == '1'
         run: |
-          git add -A oto/durum.json oto/youtube_durum.json kuyruk oto/kayitlar 2>/dev/null || true
+          # Her yol ayrı eklenir: biri yoksa diğerleri (ör. kuyruktan arşive taşımalar) yine kaydedilsin.
+          for y in oto/durum.json oto/youtube_durum.json kuyruk oto/kayitlar; do [ -e "$y" ] || git ls-files --error-unmatch "$y" >/dev/null 2>&1 && git add -A -- "$y"; done
           if ! git diff --cached --quiet; then
             git commit -q -m "Paylaşım durumu"
-            for i in 1 2 3 4; do git pull -q --rebase && git push -q && break; sleep 5; done
+            for i in 1 2 3 4; do git pull -q --rebase --autostash && git push -q && break; sleep 5; done
           fi
       - name: Hata uyarısı
         if: failure() && steps.kontrol.outputs.var == '1'
