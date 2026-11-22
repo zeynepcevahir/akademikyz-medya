@@ -19,6 +19,10 @@ ig_id = "17841435490412157"
 kullanici_adi = "osmanlicahasbihal"
 ig_id = "17841444113113164"
 
+[hesaplar.tez]
+kullanici_adi = "tezvitrini"
+ig_id = "17841471362312602"  # ayrı anahtar: IG_TEZ_TOKEN
+
 [yukleme]
 protokol = "github"
 depo = "."
