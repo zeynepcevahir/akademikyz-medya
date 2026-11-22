@@ -68,13 +68,31 @@ def _eski_erisim_anahtari(yenileme):
     return r.json()["access_token"]
 
 
+_SADE = str.maketrans({"ḥ": "h", "Ḥ": "H", "ḫ": "h", "Ḫ": "H", "ṣ": "s", "Ṣ": "S", "ṭ": "t", "Ṭ": "T",
+                       "ż": "z", "Ż": "Z", "ẓ": "z", "Ẓ": "Z", "ḳ": "k", "Ḳ": "K", "ġ": "g", "Ġ": "G",
+                       "ñ": "n", "ʿ": "", "ʾ": "", "ḍ": "d", "Ḍ": "D", "ṯ": "s", "ẕ": "z"})
+
+
+def sade(metin):
+    """YouTube araması için ilmî transkripsiyon işaretlerini düz harfe çevirir (â, î, û kalır)."""
+    return metin.translate(_SADE)
+
+
 def baslik_aciklama(metin):
     govde = "\n".join(l for l in metin.splitlines() if not l.strip().startswith("#")).strip()
     etiketler = re.findall(r"#(\w+)", metin)
-    ilk = re.split(r"(?<=[.!?…])\s", govde, maxsplit=1)[0] if govde else "Osmanlıca"
-    ilk = re.sub(r"[<>]", "", ilk).strip()
+    # Başlık: altyazının ilk satırı (yeni metinlerde bilerek başlık gibi yazılıyor).
+    ilk = govde.splitlines()[0] if govde else "Osmanlıca"
+    ilk = re.split(r"(?<=[.!?…])\s", ilk, maxsplit=1)[0]
+    ilk = sade(re.sub(r"[<>]", "", ilk)).strip()
     if len(ilk) > 88:
         ilk = ilk[:87].rsplit(" ", 1)[0] + "…"
+    ek = ""
+    if "osmanlıca" not in ilk.lower():
+        ek = " | Yunus Emre, Osmanlıca" if "#YunusEmre" in metin else " | Osmanlıca"
+    if len(ilk) + len(ek) > 90:
+        ilk = ilk[:89 - len(ek)].rsplit(" ", 1)[0] + "…"
+    ilk += ek
     baslik = f"{ilk} #Shorts"
     aciklama = re.sub(r"[<>]", "", metin.strip()) + "\n\n#Shorts"
     return baslik, aciklama[:4900], etiketler[:15]
