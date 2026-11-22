@@ -1,3 +1,3 @@
-Asking for critique and a rewrite together can obscure which suggestion you are evaluating. Request an issue list first; then ask about one issue you selected. Use a fictional paragraph and ask for clarification of an unclear term only. Compare both responses with your intended meaning; reject unsupported additions and follow local policy. This is an illustrative planning exercise. Use the line below with your own project conditions; a completed record does not certify research quality. Reusable line: Task: ___; output format: ___; check: ___. Harder to specify: task or boundary?
+Asking for a summary, a critique and a rewrite in one prompt blurs which output you are judging. Ask for the problem list only, then for an explanation of one problem you choose. Compare both with your own text and reject wrong suggestions. Task: __ / Output format: __ / Check: __. Save. Harder: the task or the limit?
 
-#AcademicAI #ResponsibleAI #AcademicWriting #GradSchool
+#ResponsibleAI #AcademicWriting #AcademicAI

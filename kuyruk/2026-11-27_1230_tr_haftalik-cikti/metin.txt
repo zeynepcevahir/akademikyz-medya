@@ -1,3 +1,3 @@
-Tez haftan: yoğunluk mu, çıktı? Ücretsiz tez planını doldurmak bir başlangıç; haftalık değerlendirme, onu kendi koşullarına uyduracağın yer. Üçüncü sayfadaki haftalık tabloyla başla, altıncı sayfadaki risk ve değerlendirme alanına geç. Tamamlanan işi görünür bir çıktıyla tarif et. Bitmeyen iş için kendini yargılamak yerine engeli ve değiştirebileceğin bir sonraki adımı yaz. Danışman kararlarını ve YZ kullanım kayıtlarını ilgili sayfalarda tut; bu kayıtlar tezinin bilimsel yeterliliğini tek başına kanıtlamaz. HTML alanları otomatik kaydedilmez; çıktını güvenli sakla. Kopyalanabilir satır: Çıktı: ___; engel: ___; sonraki adım: ___. Tez planında engelin: süre mi, kapsam mı?
+Haftayı tek cümleyle kapat. Çıktı: __ / Engel: __ / Sonraki adım: __. Bitmeyen iş için kendini yargılama; engeli yaz ve küçült. Kaydet, cuma günü doldur. Tez planında engelin: süre mi, kapsam mı?
 
-#AkademikYZ #HaftalikPlan #TezPlanlama #Lisansustu
+#HaftalikPlan #TezRutini #AkademikYZ

@@ -1,3 +1,3 @@
-Örneği gördükten sonra ölçüt değiştirmek, seçim kararını izlemeyi güçleştirir. Bir dahil etme ölçütü yaz; sınırdaki iki temsili örnekte dene. Örneğin aynı dersin iki farklı dönemine ait materyali ayrı ayrı değerlendir. Ölçütü araştırma sorusu ve yöntem gerekçesiyle tartış; değişirse tarihini ve nedenini kaydet. Bu bir temsili planlama alıştırmasıdır. Aşağıdaki satırı kendi projenin koşullarıyla doldur; tamamlanan kayıt araştırma kalitesinin onayı değildir. Kopyalanabilir satır: Ölçüt: ___; sınır örneği: ___; karar: ___. Zor olan: ölçüt mü, sınır örneği mi?
+Örnekleri gördükten sonra ölçüt değiştirmek, seçimini izlenemez yapar. Önce bir dahil etme ölçütü yaz, sınırdaki iki örnekte dene. Değiştirirsen tarihini ve nedenini kaydet. Ölçüt: __ / Sınır örneği: __ / Karar: __. Kaydet. Zor olan: ölçüt mü, sınır örneği mi?
 
-#AkademikYZ #ArastirmaYontemleri #YontemNotu #Lisansustu
+#ArastirmaYontemleri #YontemNotu #AkademikYZ

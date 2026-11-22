@@ -1,3 +1,3 @@
-AI text: fluent means verified? Polished wording can hide an unresolved claim. For this exercise, work with a clearly labelled practice paragraph containing no confidential material. Write your own critique before asking for AI feedback. Try: “Identify three unclear claims. Do not invent references or rewrite the paragraph. For each claim, ask what evidence I should check.” The prompt is a starting point, not a guarantee of accurate output. Compare suggestions with original sources and the intended meaning, and follow your institution’s AI policy. Reusable line: Identify ambiguity. Invent no references. Do not rewrite. Ask what evidence needs checking. Check first: source or context?
+Try it on a practice paragraph with no confidential material. Write your own critique first, then ask: “Identify three unclear claims. Do not invent references or rewrite. For each, tell me what evidence to check.” Compare with original sources and follow your institution's AI policy. Save this prompt. Check first: source or context?
 
-#AcademicAI #ResponsibleAI #AcademicWriting #PhDCommunity
+#ResponsibleAI #AcademicWriting #AcademicAI

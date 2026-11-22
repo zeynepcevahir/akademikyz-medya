@@ -1,3 +1,3 @@
-Tez konusu: 3 sınırla daralt. Tez konunu daraltırken ilk hedefin iyi görünen bir başlık değil, üzerinde çalışabileceğin açık bir soru olsun. Ücretsiz tez planının ilk sayfasındaki konu, kapsam ve ana soru alanlarını birlikte düşün. “YZ ve öğrenme” örneği temsili; bir ders, dönem ve materyal sınırı koymak için kullanılıyor. Bu daraltma, araştırmanın uygulanabilir olduğunu tek başına göstermez. Veri erişimini, gerekli izinleri ve yöntem seçimini danışmanınla değerlendir. YZ'den soru seçenekleri istesen de son kararı kendin gerekçelendir. Kopyalanabilir satır: Ders: ___; dönem: ___; materyal: ___. Konu mu, kapsam mı daha zor?
+“YZ ve öğrenme” bir alan, tez konusu değil. Daraltmak için üç sınır koy: ders, dönem, materyal. Kaydet ve doldur: Ders: __ / Dönem: __ / Materyal: __. Veri erişimini ve izinleri danışmanınla kontrol et. Temsili örnektir; kendi çalışmanda danışmanınla doğrula. Hangisi zor: konu mu, kapsam mı?
 
-#AkademikYZ #TezPlanlama #ArastirmaSorusu #Lisansustu
+#TezPlanlama #ArastirmaSorusu #Lisansustu
