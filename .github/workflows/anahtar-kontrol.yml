@@ -25,6 +25,16 @@ jobs:
             oto/uyari.sh "Instagram anahtarı çalışmıyor" "Günlük kontrolde anahtar (IG_TOKEN) çalışmadı; paylaşımlar durabilir. Meta Business ayarlarından yeni anahtar üretip GitHub gizli alanına kaydedin."
             exit 1
           fi
+      - name: Tez Vitrini anahtarı
+        if: always()
+        env:
+          IG_TOKEN: ${{ secrets.IG_TEZ_TOKEN }}
+        run: |
+          [ -z "$IG_TOKEN" ] && { echo "IG_TEZ_TOKEN yok; atlandı."; exit 0; }
+          if ! python3 oto/anahtar_kontrol.py; then
+            oto/uyari.sh "Instagram anahtarı çalışmıyor" "Günlük kontrolde Tez Vitrini anahtarı (IG_TEZ_TOKEN) çalışmadı; @tezvitrini paylaşımları durabilir."
+            exit 1
+          fi
       - name: Gecikmiş paylaşım
         run: |
           g=$(oto/gecikme_kontrol.sh)

@@ -20,6 +20,7 @@ jobs:
       - name: Cevapla
         env:
           IG_TOKEN: ${{ secrets.IG_TOKEN }}
+          IG_TEZ_TOKEN: ${{ secrets.IG_TEZ_TOKEN }}
           YT_CLIENT_ID: ${{ secrets.YT_CLIENT_ID }}
           YT_CLIENT_SECRET: ${{ secrets.YT_CLIENT_SECRET }}
           YT_OSM_TOKEN: ${{ secrets.YT_OSM_TOKEN }}

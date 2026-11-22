@@ -75,7 +75,7 @@ def karar(hesap, metin, baglam, anahtar):
 
 
 def ig_isle(hesap, ig_id, kullanici, durum, bildir):
-    tok = os.environ["IG_TOKEN"]
+    tok = os.environ.get(f"IG_{hesap.upper()}_TOKEN") or os.environ["IG_TOKEN"]
     g = "https://graph.facebook.com/v24.0/"
     sinir = dt.datetime.now(dt.timezone.utc) - dt.timedelta(days=GUN)
     medya = requests.get(g + f"{ig_id}/media", timeout=30, params={

@@ -23,6 +23,7 @@ jobs:
       TZ: Europe/Istanbul
       OTOPAYLASIM_EV: oto
       IG_TOKEN: ${{ secrets.IG_TOKEN }}
+      IG_TEZ_TOKEN: ${{ secrets.IG_TEZ_TOKEN }}
       GH_TOKEN: ${{ github.token }}
     steps:
       - uses: actions/checkout@v4
