@@ -39,9 +39,9 @@ SORU = re.compile(r"(?i)\?|\b(nasıl|neden|niçin|nerede|nereden|hangi|kaç|ne z
                   r"musunuz|müsünüz|how|why|where|which|what|can you|could you)\b")
 
 
-def sablon(hesap, anahtar):
-    h = SABLON.get(hesap, SABLON["tr"])
-    return h[int(hashlib.sha256(anahtar.encode()).hexdigest(), 16) % len(h)]
+def sablon(hesap, anahtar, kullanici=None):
+    import ilk_yorum
+    return ilk_yorum.cevap(hesap, anahtar, kullanici)
 
 
 def yz_cevap(hesap, metin, baglam):
@@ -62,7 +62,7 @@ def yz_cevap(hesap, metin, baglam):
         return None
 
 
-def karar(hesap, metin, baglam, anahtar):
+def karar(hesap, metin, baglam, anahtar, kullanici=None):
     """(cevap ya da None, bildirim_sebebi ya da None)"""
     if OLUMSUZ.search(metin):
         return None, "olumsuz/hassas"
@@ -71,7 +71,7 @@ def karar(hesap, metin, baglam, anahtar):
         return (c, None) if c else (None, "soru")
     if len(metin) > 220:
         return None, "uzun yorum"
-    return sablon(hesap, anahtar), None
+    return sablon(hesap, anahtar, kullanici), None
 
 
 def ig_isle(hesap, ig_id, kullanici, durum, bildir):
@@ -93,7 +93,7 @@ def ig_isle(hesap, ig_id, kullanici, durum, bildir):
                 continue
             if any(x.get("username", "").lower() == kullanici.lower() for x in c.get("replies", {}).get("data", [])):
                 durum[c["id"]] = {"durum": "zaten_cevapli"}; continue
-            cevap, sebep = karar(hesap, c.get("text", ""), m.get("caption", ""), c["id"])
+            cevap, sebep = karar(hesap, c.get("text", ""), m.get("caption", ""), c["id"], c.get("username"))
             if cevap and sayi < SINIR:
                 rr = requests.post(g + f"{c['id']}/replies", timeout=30, data={"message": cevap, "access_token": tok})
                 durum[c["id"]] = {"durum": "cevaplandi" if rr.status_code == 200 else "hata", "hesap": hesap}

@@ -1087,6 +1087,21 @@ class Application:
                                 self.state.save()
                         except Exception:
                             self.logger.warning("%s: ilk yorum eklenemedi.", post.candidate.path.name)
+                        # Gönderiyi hikâyede de paylaş (ayar.toml: hikaye = false ile kapatılır); hata yayını etkilemez.
+                        if self.config.get("hikaye", True) and not record.get("hikaye") and urls:
+                            try:
+                                url, video = urls[0]
+                                hikaye = api.create(ig_id, media_type="STORIES",
+                                                    **({"video_url": url} if video else {"image_url": url}))
+                                api.wait(hikaye)
+                                cevap = api.call("POST", f"{ig_id}/media_publish", creation_id=hikaye)
+                                record["hikaye"] = str(cevap.get("id", "")) or "gonderildi"
+                                self.state.save()
+                                self.logger.info("%s: hikâyede de paylaşıldı.", post.candidate.path.name)
+                            except Exception:
+                                record["hikaye"] = "hata"
+                                self.state.save()
+                                self.logger.warning("%s: hikâye paylaşılamadı.", post.candidate.path.name)
                         self.logger.info("%s: paylaşım yayınlandı; medya kimliği: %s.", post.candidate.path.name, media_id)
                     finally:
                         self.cleanup_uploads(uploader, names)

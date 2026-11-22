@@ -44,8 +44,12 @@ jobs:
                 gh workflow run paylas.yml -R "$REPO" --ref main && son_tetik=$(date +%s)
               fi
             fi
-            # Yorum cevapları: yarım saatte bir (08:00-24:00 arası).
-            if [ "$(date +%H)" -ge 8 ] && [ $(( $(date +%s) - ${son_yorum:-0} )) -ge 1800 ]; then
+            # Yorum cevapları: normalde yarım saatte bir (08:00-24:00); son 90 dk'da paylaşım olduysa 10 dk'da bir
+            # (ilk saatteki hızlı cevaplar erişimi büyütür).
+            yorum_ara=1800
+            son_pay=$(gh run list -R "$REPO" -w paylas.yml -L 1 -s success --json updatedAt --jq '.[0].updatedAt' 2>/dev/null || true)
+            if [ -n "$son_pay" ] && [ $(( $(date +%s) - $(date -d "$son_pay" +%s 2>/dev/null || echo 0) )) -lt 5400 ]; then yorum_ara=600; fi
+            if { [ "$(date +%H)" -ge 8 ] || [ "$yorum_ara" = 600 ]; } && [ $(( $(date +%s) - ${son_yorum:-0} )) -ge $yorum_ara ]; then
               gh workflow run yorum.yml -R "$REPO" --ref main && son_yorum=$(date +%s)
             fi
             # YouTube geriye dönük yükleme: yoğun saatlerde yarım saatte bir dürt (sınırları betik uygular).
