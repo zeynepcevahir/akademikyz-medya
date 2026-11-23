@@ -76,3 +76,23 @@
 2026-11-23 19:06:33,181 | API isteği: POST https://graph.facebook.com/v24.0/17841471362312602/media_publish
 2026-11-23 19:06:37,609 | 2026-11-23_1900_tez_655533: hikâyede de paylaşıldı.
 2026-11-23 19:06:37,609 | 2026-11-23_1900_tez_655533: paylaşım yayınlandı; medya kimliği: 18111651368338289.
+2026-11-23 19:34:17,015 | API isteği: POST https://graph.facebook.com/v24.0/17841463028324015/media
+2026-11-23 19:34:19,279 | API isteği: GET https://graph.facebook.com/v24.0/17945873193100945
+2026-11-23 19:34:21,907 | API isteği: GET https://graph.facebook.com/v24.0/17945873193100945
+2026-11-23 19:34:25,919 | API isteği: GET https://graph.facebook.com/v24.0/17945873193100945
+2026-11-23 19:34:30,961 | API isteği: GET https://graph.facebook.com/v24.0/17945873193100945
+2026-11-23 19:34:38,598 | API isteği: GET https://graph.facebook.com/v24.0/17945873193100945
+2026-11-23 19:34:49,575 | API isteği: GET https://graph.facebook.com/v24.0/17945873193100945
+2026-11-23 19:34:51,465 | API isteği: POST https://graph.facebook.com/v24.0/17841463028324015/media_publish
+2026-11-23 19:35:03,911 | API isteği: GET https://graph.facebook.com/v24.0/18136593937741856
+2026-11-23 19:35:04,297 | API isteği: POST https://graph.facebook.com/v24.0/18136593937741856/comments
+2026-11-23 19:35:07,329 | API isteği: POST https://graph.facebook.com/v24.0/17841463028324015/media
+2026-11-23 19:35:09,185 | API isteği: GET https://graph.facebook.com/v24.0/17945873511100945
+2026-11-23 19:35:11,761 | API isteği: GET https://graph.facebook.com/v24.0/17945873511100945
+2026-11-23 19:35:15,228 | API isteği: GET https://graph.facebook.com/v24.0/17945873511100945
+2026-11-23 19:35:20,518 | API isteği: GET https://graph.facebook.com/v24.0/17945873511100945
+2026-11-23 19:35:27,746 | API isteği: GET https://graph.facebook.com/v24.0/17945873511100945
+2026-11-23 19:35:38,554 | API isteği: GET https://graph.facebook.com/v24.0/17945873511100945
+2026-11-23 19:35:39,440 | API isteği: POST https://graph.facebook.com/v24.0/17841463028324015/media_publish
+2026-11-23 19:35:49,232 | 2026-11-23_1930_tr_tez-kapsami: hikâyede de paylaşıldı.
+2026-11-23 19:35:49,232 | 2026-11-23_1930_tr_tez-kapsami: paylaşım yayınlandı; medya kimliği: 18136593937741856.
