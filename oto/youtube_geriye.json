@@ -141,9 +141,12 @@
   },
   "18105829783952757": {
     "hesap": "osm",
-    "durum": "yukleniyor",
+    "durum": "yuklendi",
     "permalink": "https://www.instagram.com/reel/DZaZXOoiAYd/",
     "baslama": "2026-11-23T18:40:26+03:00",
-    "deneme": 1
+    "deneme": 1,
+    "video_id": "Z_BvrbR0qEA",
+    "gizlilik": "public",
+    "ilk_yorum": "Ugx1qiPiYzwwTda7kf94AaABAg"
   }
 }
