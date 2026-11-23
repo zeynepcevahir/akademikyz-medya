@@ -96,3 +96,23 @@
 2026-11-23 19:35:39,440 | API isteği: POST https://graph.facebook.com/v24.0/17841463028324015/media_publish
 2026-11-23 19:35:49,232 | 2026-11-23_1930_tr_tez-kapsami: hikâyede de paylaşıldı.
 2026-11-23 19:35:49,232 | 2026-11-23_1930_tr_tez-kapsami: paylaşım yayınlandı; medya kimliği: 18136593937741856.
+2026-11-23 20:34:36,581 | API isteği: POST https://graph.facebook.com/v24.0/17841444113113164/media
+2026-11-23 20:34:37,495 | API isteği: GET https://graph.facebook.com/v24.0/18082051385470438
+2026-11-23 20:34:39,767 | API isteği: GET https://graph.facebook.com/v24.0/18082051385470438
+2026-11-23 20:34:42,864 | API isteği: GET https://graph.facebook.com/v24.0/18082051385470438
+2026-11-23 20:34:47,548 | API isteği: GET https://graph.facebook.com/v24.0/18082051385470438
+2026-11-23 20:34:54,408 | API isteği: GET https://graph.facebook.com/v24.0/18082051385470438
+2026-11-23 20:35:04,648 | API isteği: GET https://graph.facebook.com/v24.0/18082051385470438
+2026-11-23 20:35:06,025 | API isteği: POST https://graph.facebook.com/v24.0/17841444113113164/media_publish
+2026-11-23 20:35:17,583 | API isteği: GET https://graph.facebook.com/v24.0/18118644275324379
+2026-11-23 20:35:17,716 | API isteği: POST https://graph.facebook.com/v24.0/18118644275324379/comments
+2026-11-23 20:35:19,376 | API isteği: POST https://graph.facebook.com/v24.0/17841444113113164/media
+2026-11-23 20:35:20,321 | API isteği: GET https://graph.facebook.com/v24.0/18082051535470438
+2026-11-23 20:35:22,414 | API isteği: GET https://graph.facebook.com/v24.0/18082051535470438
+2026-11-23 20:35:25,518 | API isteği: GET https://graph.facebook.com/v24.0/18082051535470438
+2026-11-23 20:35:30,127 | API isteği: GET https://graph.facebook.com/v24.0/18082051535470438
+2026-11-23 20:35:36,998 | API isteği: GET https://graph.facebook.com/v24.0/18082051535470438
+2026-11-23 20:35:47,223 | API isteği: GET https://graph.facebook.com/v24.0/18082051535470438
+2026-11-23 20:35:47,344 | API isteği: POST https://graph.facebook.com/v24.0/17841444113113164/media_publish
+2026-11-23 20:35:54,627 | 2026-11-23_2030_hasbihal_sukut-sir: hikâyede de paylaşıldı.
+2026-11-23 20:35:54,627 | 2026-11-23_2030_hasbihal_sukut-sir: paylaşım yayınlandı; medya kimliği: 18118644275324379.
