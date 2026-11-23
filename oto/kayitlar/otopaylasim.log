@@ -54,3 +54,25 @@
 2026-11-23 17:04:31,582 | API isteği: POST https://graph.facebook.com/v24.0/17841477202180739/media_publish
 2026-11-23 17:04:41,006 | 2026-11-23_1700_en_tez-kapsami: hikâyede de paylaşıldı.
 2026-11-23 17:04:41,006 | 2026-11-23_1700_en_tez-kapsami: paylaşım yayınlandı; medya kimliği: 18402769672166553.
+2026-11-23 19:05:45,799 | API isteği: POST https://graph.facebook.com/v24.0/17841471362312602/media
+2026-11-23 19:05:49,907 | API isteği: GET https://graph.facebook.com/v24.0/17911722312378744
+2026-11-23 19:05:50,047 | API isteği: POST https://graph.facebook.com/v24.0/17841471362312602/media
+2026-11-23 19:05:54,237 | API isteği: GET https://graph.facebook.com/v24.0/17911722372378744
+2026-11-23 19:05:54,487 | API isteği: POST https://graph.facebook.com/v24.0/17841471362312602/media
+2026-11-23 19:05:59,170 | API isteği: GET https://graph.facebook.com/v24.0/17911722420378744
+2026-11-23 19:05:59,489 | API isteği: POST https://graph.facebook.com/v24.0/17841471362312602/media
+2026-11-23 19:06:04,333 | API isteği: GET https://graph.facebook.com/v24.0/17911722459378744
+2026-11-23 19:06:04,660 | API isteği: POST https://graph.facebook.com/v24.0/17841471362312602/media
+2026-11-23 19:06:09,325 | API isteği: GET https://graph.facebook.com/v24.0/17911722516378744
+2026-11-23 19:06:09,587 | API isteği: POST https://graph.facebook.com/v24.0/17841471362312602/media
+2026-11-23 19:06:12,895 | API isteği: GET https://graph.facebook.com/v24.0/17911722558378744
+2026-11-23 19:06:13,404 | API isteği: POST https://graph.facebook.com/v24.0/17841471362312602/media
+2026-11-23 19:06:17,526 | API isteği: GET https://graph.facebook.com/v24.0/17911722606378744
+2026-11-23 19:06:19,359 | API isteği: POST https://graph.facebook.com/v24.0/17841471362312602/media_publish
+2026-11-23 19:06:26,191 | API isteği: GET https://graph.facebook.com/v24.0/18111651368338289
+2026-11-23 19:06:26,560 | API isteği: POST https://graph.facebook.com/v24.0/18111651368338289/comments
+2026-11-23 19:06:28,337 | API isteği: POST https://graph.facebook.com/v24.0/17841471362312602/media
+2026-11-23 19:06:32,876 | API isteği: GET https://graph.facebook.com/v24.0/17911722666378744
+2026-11-23 19:06:33,181 | API isteği: POST https://graph.facebook.com/v24.0/17841471362312602/media_publish
+2026-11-23 19:06:37,609 | 2026-11-23_1900_tez_655533: hikâyede de paylaşıldı.
+2026-11-23 19:06:37,609 | 2026-11-23_1900_tez_655533: paylaşım yayınlandı; medya kimliği: 18111651368338289.
