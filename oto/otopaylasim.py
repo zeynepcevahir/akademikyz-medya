@@ -1075,8 +1075,9 @@ class Application:
                             self.state.save()
                         except Exception:
                             self.logger.warning("%s: yayın başarılı, kalıcı bağlantı alınamadı.", post.candidate.path.name)
-                        # İlk yorum (etkileşim için); hata yayını etkilemez.
-                        try:
+                        # İlk yorum (ayar.toml: ilk_yorum = false ile kapalı); hata yayını etkilemez.
+                        if self.config.get("ilk_yorum", True):
+                          try:
                             import ilk_yorum
                             ozel = post.candidate.path / "ilk_yorum.txt"
                             mesaj = (ozel.read_text(encoding="utf-8").strip() if ozel.is_file()
@@ -1085,7 +1086,7 @@ class Application:
                                 cevap = api.call("POST", f"{media_id}/comments", message=mesaj)
                                 record["ilk_yorum"] = cevap.get("id", "") or "gonderildi"
                                 self.state.save()
-                        except Exception:
+                          except Exception:
                             self.logger.warning("%s: ilk yorum eklenemedi.", post.candidate.path.name)
                         # Gönderiyi hikâyede de paylaş (ayar.toml: hikaye = false ile kapatılır); hata yayını etkilemez.
                         if self.config.get("hikaye", True) and not record.get("hikaye") and urls:

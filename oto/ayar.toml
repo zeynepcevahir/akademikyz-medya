@@ -2,6 +2,10 @@ mod = "canli"
 kuyruk = "../kuyruk"
 api_surumu = "v24.0"
 gunluk_sinir = 3
+# Meta "otomatik hesap hareketleri" uyarısı (24.11.2026) sonrası kapatıldı:
+hikaye = false     # gönderiyi hikâyede otomatik paylaşma
+ilk_yorum = false  # yayından hemen sonra otomatik ilk yorum yazma
+ig_yorum_cevap = false  # Instagram yorumlarına otomatik cevap yok; yalnız soru/olumsuz yorumlar bildirilir
 
 [hesaplar.tr]
 kullanici_adi = "akademikyz.tr"

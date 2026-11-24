@@ -1,5 +1,8 @@
 """Instagram ve YouTube yorumlarına otomatik, ölçülü cevap.
 
+24.11.2026'dan beri Instagram'da otomatik cevap KAPALI (Meta "otomatik hesap hareketleri" uyarısı):
+Instagram yorumları en çok 3 saatte bir yalnız okunur, soru/olumsuz olanlar bildirilir. YouTube aynen devam.
+
 - Her yoruma en fazla 1 cevap; hesabın kendi yorumlarına ve zaten cevaplanmışlara dokunulmaz.
 - Övgü/teşekkür/kısa tepki: hesabın üslubunda şablondan sıcak cevap (ücretsiz).
 - Soru: ANTHROPIC_API_KEY varsa ucuz modelle (Haiku) kısa, dikkatli cevap; emin değilse cevap yok.
@@ -74,7 +77,10 @@ def karar(hesap, metin, baglam, anahtar, kullanici=None):
     return sablon(hesap, anahtar, kullanici), None
 
 
-def ig_isle(hesap, ig_id, kullanici, durum, bildir):
+IG_ARA = 3 * 3600  # Instagram yorumları en çok 3 saatte bir, yalnız okunarak taranır
+
+
+def ig_isle(hesap, ig_id, kullanici, durum, bildir, cevapla=False):
     tok = os.environ.get(f"IG_{hesap.upper()}_TOKEN") or os.environ["IG_TOKEN"]
     g = "https://graph.facebook.com/v24.0/"
     sinir = dt.datetime.now(dt.timezone.utc) - dt.timedelta(days=GUN)
@@ -93,6 +99,13 @@ def ig_isle(hesap, ig_id, kullanici, durum, bildir):
                 continue
             if any(x.get("username", "").lower() == kullanici.lower() for x in c.get("replies", {}).get("data", [])):
                 durum[c["id"]] = {"durum": "zaten_cevapli"}; continue
+            if not cevapla:  # salt okuma: cevap yazılmaz, soru/olumsuz yorumlar bildirilir
+                metin = c.get("text", "")
+                sebep = "olumsuz/hassas" if OLUMSUZ.search(metin) else "soru" if SORU.search(metin) else None
+                durum[c["id"]] = {"durum": "bildirildi" if sebep else "okundu", "hesap": hesap}
+                if sebep:
+                    bildir.append(f"- **{hesap}** ({sebep}): \"{metin[:150]}\" — {m['permalink']}")
+                continue
             cevap, sebep = karar(hesap, c.get("text", ""), m.get("caption", ""), c["id"], c.get("username"))
             if cevap and sayi < SINIR:
                 rr = requests.post(g + f"{c['id']}/replies", timeout=30, data={"message": cevap, "access_token": tok})
@@ -139,11 +152,16 @@ def main():
     ayar = tomllib.loads((EV / "ayar.toml").read_text(encoding="utf-8"))
     durum = json.loads(DURUM.read_text(encoding="utf-8")) if DURUM.exists() else {}
     bildir = []
+    simdi = dt.datetime.now(dt.timezone.utc).timestamp()
+    ig_tara = simdi - durum.get("_ig_son_tarama", 0) >= IG_ARA
+    if ig_tara:
+        durum["_ig_son_tarama"] = simdi
     for hesap, h in ayar["hesaplar"].items():
-        try:
-            ig_isle(hesap, h["ig_id"], h["kullanici_adi"], durum, bildir)
-        except Exception as e:
-            print(f"{hesap} Instagram: {type(e).__name__}")
+        if ig_tara:
+            try:
+                ig_isle(hesap, h["ig_id"], h["kullanici_adi"], durum, bildir, ayar.get("ig_yorum_cevap", False))
+            except Exception as e:
+                print(f"{hesap} Instagram: {type(e).__name__}")
         if os.environ.get(YT.get(hesap, "-")) and os.environ.get("YT_CLIENT_ID"):
             try:
                 yt_isle(hesap, os.environ[YT[hesap]], durum, bildir)
@@ -152,7 +170,7 @@ def main():
     yt_ortak.depoya_yaz(DURUM, durum, "yorum cevapları")
     if bildir and os.environ.get("GITHUB_ACTIONS"):
         subprocess.run([str(EV / "uyari.sh"), "Cevap bekleyen yorumlar",
-                        "Otomatik cevaplanmayan yorumlar (soru, uzun ya da hassas):\n\n" + "\n".join(bildir)])
+                        "Cevap bekleyen yorumlar (soru, uzun ya da hassas; Instagram cevaplarını elle yazın):\n\n" + "\n".join(bildir)])
     return 0
 
 
