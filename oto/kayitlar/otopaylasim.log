@@ -147,3 +147,13 @@
 2026-11-24 20:36:56,766 | API isteği: POST https://graph.facebook.com/v24.0/17841444113113164/media_publish
 2026-11-24 20:37:07,544 | API isteği: GET https://graph.facebook.com/v24.0/17944240374385788
 2026-11-24 20:37:07,871 | 2026-11-24_2030_hasbihal_uns-ulfet-sohbet: paylaşım yayınlandı; medya kimliği: 17944240374385788.
+2026-11-24 21:06:13,590 | API isteği: POST https://graph.facebook.com/v24.0/17841435490412157/media
+2026-11-24 21:06:14,778 | API isteği: GET https://graph.facebook.com/v24.0/18105397916183014
+2026-11-24 21:06:17,064 | API isteği: GET https://graph.facebook.com/v24.0/18105397916183014
+2026-11-24 21:06:20,310 | API isteği: GET https://graph.facebook.com/v24.0/18105397916183014
+2026-11-24 21:06:25,105 | API isteği: GET https://graph.facebook.com/v24.0/18105397916183014
+2026-11-24 21:06:31,996 | API isteği: GET https://graph.facebook.com/v24.0/18105397916183014
+2026-11-24 21:06:42,247 | API isteği: GET https://graph.facebook.com/v24.0/18105397916183014
+2026-11-24 21:06:43,730 | API isteği: POST https://graph.facebook.com/v24.0/17841435490412157/media_publish
+2026-11-24 21:06:54,301 | API isteği: GET https://graph.facebook.com/v24.0/18080304848733622
+2026-11-24 21:06:54,563 | 2026-11-24_2100_osm_ilim-kendini-bilmek: paylaşım yayınlandı; medya kimliği: 18080304848733622.
