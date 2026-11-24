@@ -166,10 +166,13 @@
       "klasor": "2026-11-24_2100_osm_ilim-kendini-bilmek",
       "ozet": "63a09b76687707a635dcfe48070e81b9220d601bf321e8b4fe4b3da72fb8243d",
       "hesap": "osm",
-      "durum": "yayinlaniyor",
+      "durum": "yayinlandi",
       "deneme_sayisi": 0,
       "konteyner_id": "18105397916183014",
-      "yayina_baslama": "2026-11-24T21:06:42+03:00"
+      "yayina_baslama": "2026-11-24T21:06:42+03:00",
+      "media_id": "18080304848733622",
+      "yayin_zamani": "2026-11-24T21:06:53+03:00",
+      "permalink": ""
     }
   },
   "tokenlar": {
