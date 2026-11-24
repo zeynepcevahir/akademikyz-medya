@@ -140,10 +140,13 @@
       "klasor": "2026-11-24_1900_tez_1027581",
       "ozet": "e5a0fdaab5b7604eb759338c34cf96657e317613a3e2c1136a2e8b1671362392",
       "hesap": "tez",
-      "durum": "yayinlaniyor",
+      "durum": "yayinlandi",
       "deneme_sayisi": 0,
       "konteyner_id": "17912047629378744",
-      "yayina_baslama": "2026-11-24T19:07:19+03:00"
+      "yayina_baslama": "2026-11-24T19:07:19+03:00",
+      "media_id": "17901447774680951",
+      "yayin_zamani": "2026-11-24T19:07:27+03:00",
+      "permalink": ""
     }
   },
   "tokenlar": {
