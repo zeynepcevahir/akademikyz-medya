@@ -46,8 +46,12 @@
   "63a09b76687707a635dcfe48070e81b9220d601bf321e8b4fe4b3da72fb8243d": {
     "klasor": "2026-11-24_2100_osm_ilim-kendini-bilmek",
     "hesap": "osm",
-    "durum": "yukleniyor",
+    "durum": "yuklendi",
     "deneme": 1,
-    "baslama": "2026-11-24T18:06:56+00:00"
+    "baslama": "2026-11-24T18:06:56+00:00",
+    "video_id": "pgIEbiItRq0",
+    "gizlilik": "public",
+    "adres": "https://youtube.com/shorts/pgIEbiItRq0",
+    "ilk_yorum": "UgwHDU8OjzuhA4HSheN4AaABAg"
   }
 }
