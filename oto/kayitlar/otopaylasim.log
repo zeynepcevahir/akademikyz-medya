@@ -137,3 +137,13 @@
 2026-11-24 19:07:21,121 | API isteği: POST https://graph.facebook.com/v24.0/17841471362312602/media_publish
 2026-11-24 19:07:29,110 | API isteği: GET https://graph.facebook.com/v24.0/17901447774680951
 2026-11-24 19:07:29,345 | 2026-11-24_1900_tez_1027581: paylaşım yayınlandı; medya kimliği: 17901447774680951.
+2026-11-24 20:36:25,303 | API isteği: POST https://graph.facebook.com/v24.0/17841444113113164/media
+2026-11-24 20:36:26,896 | API isteği: GET https://graph.facebook.com/v24.0/18082138472470438
+2026-11-24 20:36:29,228 | API isteği: GET https://graph.facebook.com/v24.0/18082138472470438
+2026-11-24 20:36:32,480 | API isteği: GET https://graph.facebook.com/v24.0/18082138472470438
+2026-11-24 20:36:37,369 | API isteği: GET https://graph.facebook.com/v24.0/18082138472470438
+2026-11-24 20:36:44,412 | API isteği: GET https://graph.facebook.com/v24.0/18082138472470438
+2026-11-24 20:36:54,912 | API isteği: GET https://graph.facebook.com/v24.0/18082138472470438
+2026-11-24 20:36:56,766 | API isteği: POST https://graph.facebook.com/v24.0/17841444113113164/media_publish
+2026-11-24 20:37:07,544 | API isteği: GET https://graph.facebook.com/v24.0/17944240374385788
+2026-11-24 20:37:07,871 | 2026-11-24_2030_hasbihal_uns-ulfet-sohbet: paylaşım yayınlandı; medya kimliği: 17944240374385788.
