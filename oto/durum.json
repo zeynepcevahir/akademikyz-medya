@@ -231,10 +231,13 @@
       "klasor": "2026-11-25_2100_osm_sevi-gonul-yapmak",
       "ozet": "22996efd3f28b4348a3377643c01359efddf87fccbd7599dfedfe5c3187bad6e",
       "hesap": "osm",
-      "durum": "yayinlaniyor",
+      "durum": "yayinlandi",
       "deneme_sayisi": 0,
       "konteyner_id": "18105497558183014",
-      "yayina_baslama": "2026-11-25T21:03:52+03:00"
+      "yayina_baslama": "2026-11-25T21:03:52+03:00",
+      "media_id": "18128944861894393",
+      "yayin_zamani": "2026-11-25T21:04:02+03:00",
+      "permalink": ""
     }
   },
   "tokenlar": {
