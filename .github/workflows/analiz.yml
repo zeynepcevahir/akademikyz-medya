@@ -24,6 +24,7 @@ jobs:
         run: |
           pip install -q requests
           python3 oto/analiz.py
+          python3 oto/analiz_ozet.py
       - uses: actions/upload-artifact@v4
         with:
           name: analiz
