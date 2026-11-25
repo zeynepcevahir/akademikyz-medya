@@ -79,8 +79,12 @@
   "22996efd3f28b4348a3377643c01359efddf87fccbd7599dfedfe5c3187bad6e": {
     "klasor": "2026-11-25_2100_osm_sevi-gonul-yapmak",
     "hesap": "osm",
-    "durum": "yukleniyor",
+    "durum": "yuklendi",
     "deneme": 1,
-    "baslama": "2026-11-25T18:04:06+00:00"
+    "baslama": "2026-11-25T18:04:06+00:00",
+    "video_id": "he8uCFPRjHo",
+    "gizlilik": "public",
+    "adres": "https://youtube.com/shorts/he8uCFPRjHo",
+    "ilk_yorum": "UgxNUuga7HQh7KmkYJ94AaABAg"
   }
 }
