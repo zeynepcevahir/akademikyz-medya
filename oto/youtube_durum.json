@@ -57,8 +57,12 @@
   "a98a4d352ed45db6e2a048341cdcf973791362272b42c2207b969ff38d6d89d6": {
     "klasor": "2026-11-25_1900_tez_704344",
     "hesap": "tez",
-    "durum": "yukleniyor",
+    "durum": "yuklendi",
     "deneme": 1,
-    "baslama": "2026-11-25T16:51:10+00:00"
+    "baslama": "2026-11-25T16:51:10+00:00",
+    "video_id": "6f5Mihp9Az4",
+    "gizlilik": "public",
+    "adres": "https://youtube.com/shorts/6f5Mihp9Az4",
+    "ilk_yorum": "UgwPevyJr6QnU1-xvq54AaABAg"
   }
 }
