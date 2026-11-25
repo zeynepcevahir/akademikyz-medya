@@ -1,0 +1,31 @@
+# Paylaşım performansını okur (Graph API + YouTube API, yalnızca okuma); elle başlatılır.
+# Sonuç herkese açık depoya YAZILMAZ; 1 gün saklanan iş eki olarak kalır.
+name: Performans analizi
+on:
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  analiz:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          sparse-checkout: oto
+      - name: Veriyi oku
+        env:
+          IG_TOKEN: ${{ secrets.IG_TOKEN }}
+          IG_TEZ_TOKEN: ${{ secrets.IG_TEZ_TOKEN }}
+          YT_CLIENT_ID: ${{ secrets.YT_CLIENT_ID }}
+          YT_CLIENT_SECRET: ${{ secrets.YT_CLIENT_SECRET }}
+          YT_OSM_TOKEN: ${{ secrets.YT_OSM_TOKEN }}
+          YT_HASBIHAL_TOKEN: ${{ secrets.YT_HASBIHAL_TOKEN }}
+          YT_TEZ_TOKEN: ${{ secrets.YT_TEZ_TOKEN }}
+        run: |
+          pip install -q requests
+          python3 oto/analiz.py
+      - uses: actions/upload-artifact@v4
+        with:
+          name: analiz
+          path: analiz.json
+          retention-days: 1
