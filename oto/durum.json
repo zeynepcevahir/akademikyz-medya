@@ -205,10 +205,13 @@
       "klasor": "2026-11-25_1930_tr_yontem-gerekcesi",
       "ozet": "b9faa9604c0046674e4ab171a4f02ffedaacc040c753a6c6ef88e011ad99eadb",
       "hesap": "tr",
-      "durum": "yayinlaniyor",
+      "durum": "yayinlandi",
       "deneme_sayisi": 0,
       "konteyner_id": "17946311295100945",
-      "yayina_baslama": "2026-11-25T19:50:57+03:00"
+      "yayina_baslama": "2026-11-25T19:50:57+03:00",
+      "media_id": "17943367617399461",
+      "yayin_zamani": "2026-11-25T19:51:07+03:00",
+      "permalink": ""
     }
   },
   "tokenlar": {
