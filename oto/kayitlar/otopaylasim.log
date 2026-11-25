@@ -157,3 +157,39 @@
 2026-11-24 21:06:43,730 | API isteği: POST https://graph.facebook.com/v24.0/17841435490412157/media_publish
 2026-11-24 21:06:54,301 | API isteği: GET https://graph.facebook.com/v24.0/18080304848733622
 2026-11-24 21:06:54,563 | 2026-11-24_2100_osm_ilim-kendini-bilmek: paylaşım yayınlandı; medya kimliği: 18080304848733622.
+2026-11-25 19:45:14,852 | API isteği: POST https://graph.facebook.com/v24.0/17841477202180739/media
+2026-11-25 19:45:16,136 | API isteği: GET https://graph.facebook.com/v24.0/17881086870573407
+2026-11-25 19:45:18,355 | API isteği: GET https://graph.facebook.com/v24.0/17881086870573407
+2026-11-25 19:45:21,519 | API isteği: GET https://graph.facebook.com/v24.0/17881086870573407
+2026-11-25 19:45:26,728 | API isteği: GET https://graph.facebook.com/v24.0/17881086870573407
+2026-11-25 19:45:33,658 | API isteği: GET https://graph.facebook.com/v24.0/17881086870573407
+2026-11-25 19:45:43,939 | API isteği: GET https://graph.facebook.com/v24.0/17881086870573407
+2026-11-25 19:45:59,274 | API isteği: GET https://graph.facebook.com/v24.0/17881086870573407
+2026-11-25 19:46:22,246 | API isteği: GET https://graph.facebook.com/v24.0/17881086870573407
+2026-11-25 19:46:52,425 | API isteği: GET https://graph.facebook.com/v24.0/17881086870573407
+2026-11-25 19:46:53,988 | API isteği: POST https://graph.facebook.com/v24.0/17841477202180739/media_publish
+2026-11-25 19:47:03,446 | API isteği: GET https://graph.facebook.com/v24.0/17960008050328829
+2026-11-25 19:47:03,664 | 2026-11-25_1700_en_yontem-gerekcesi: paylaşım yayınlandı; medya kimliği: 17960008050328829.
+2026-11-25 19:48:10,433 | API isteği: POST https://graph.facebook.com/v24.0/17841471362312602/media
+2026-11-25 19:48:13,747 | API isteği: GET https://graph.facebook.com/v24.0/17912377425378744
+2026-11-25 19:48:16,092 | API isteği: GET https://graph.facebook.com/v24.0/17912377425378744
+2026-11-25 19:48:16,242 | API isteği: POST https://graph.facebook.com/v24.0/17841471362312602/media
+2026-11-25 19:48:19,258 | API isteği: GET https://graph.facebook.com/v24.0/17912377548378744
+2026-11-25 19:48:21,397 | API isteği: GET https://graph.facebook.com/v24.0/17912377548378744
+2026-11-25 19:48:21,574 | API isteği: POST https://graph.facebook.com/v24.0/17841471362312602/media
+2026-11-25 19:48:24,985 | API isteği: GET https://graph.facebook.com/v24.0/17912377596378744
+2026-11-25 19:48:27,131 | API isteği: GET https://graph.facebook.com/v24.0/17912377596378744
+2026-11-25 19:48:27,290 | API isteği: POST https://graph.facebook.com/v24.0/17841471362312602/media
+2026-11-25 19:48:30,683 | API isteği: GET https://graph.facebook.com/v24.0/17912377734378744
+2026-11-25 19:48:30,844 | API isteği: POST https://graph.facebook.com/v24.0/17841471362312602/media
+2026-11-25 19:48:33,361 | API isteği: GET https://graph.facebook.com/v24.0/17912377791378744
+2026-11-25 19:48:35,521 | API isteği: GET https://graph.facebook.com/v24.0/17912377791378744
+2026-11-25 19:48:35,685 | API isteği: POST https://graph.facebook.com/v24.0/17841471362312602/media
+2026-11-25 19:48:39,348 | API isteği: GET https://graph.facebook.com/v24.0/17912377944378744
+2026-11-25 19:48:41,485 | API isteği: GET https://graph.facebook.com/v24.0/17912377944378744
+2026-11-25 19:48:41,637 | API isteği: POST https://graph.facebook.com/v24.0/17841471362312602/media
+2026-11-25 19:48:45,022 | API isteği: GET https://graph.facebook.com/v24.0/17912377986378744
+2026-11-25 19:48:47,174 | API isteği: GET https://graph.facebook.com/v24.0/17912377986378744
+2026-11-25 19:48:48,739 | API isteği: POST https://graph.facebook.com/v24.0/17841471362312602/media_publish
+2026-11-25 19:48:54,487 | API isteği: GET https://graph.facebook.com/v24.0/18139645636783723
+2026-11-25 19:48:54,671 | 2026-11-25_1900_tez_704344: paylaşım yayınlandı; medya kimliği: 18139645636783723.
