@@ -193,3 +193,13 @@
 2026-11-25 19:48:48,739 | API isteği: POST https://graph.facebook.com/v24.0/17841471362312602/media_publish
 2026-11-25 19:48:54,487 | API isteği: GET https://graph.facebook.com/v24.0/18139645636783723
 2026-11-25 19:48:54,671 | 2026-11-25_1900_tez_704344: paylaşım yayınlandı; medya kimliği: 18139645636783723.
+2026-11-25 20:35:13,846 | API isteği: POST https://graph.facebook.com/v24.0/17841444113113164/media
+2026-11-25 20:35:15,895 | API isteği: GET https://graph.facebook.com/v24.0/18082212635470438
+2026-11-25 20:35:18,262 | API isteği: GET https://graph.facebook.com/v24.0/18082212635470438
+2026-11-25 20:35:21,693 | API isteği: GET https://graph.facebook.com/v24.0/18082212635470438
+2026-11-25 20:35:26,541 | API isteği: GET https://graph.facebook.com/v24.0/18082212635470438
+2026-11-25 20:35:33,683 | API isteği: GET https://graph.facebook.com/v24.0/18082212635470438
+2026-11-25 20:35:44,048 | API isteği: GET https://graph.facebook.com/v24.0/18082212635470438
+2026-11-25 20:35:45,907 | API isteği: POST https://graph.facebook.com/v24.0/17841444113113164/media_publish
+2026-11-25 20:35:54,596 | API isteği: GET https://graph.facebook.com/v24.0/18020849036953113
+2026-11-25 20:35:55,035 | 2026-11-25_2030_hasbihal_hatir-uzun-unlu: paylaşım yayınlandı; medya kimliği: 18020849036953113.
