@@ -203,3 +203,13 @@
 2026-11-25 20:35:45,907 | API isteği: POST https://graph.facebook.com/v24.0/17841444113113164/media_publish
 2026-11-25 20:35:54,596 | API isteği: GET https://graph.facebook.com/v24.0/18020849036953113
 2026-11-25 20:35:55,035 | 2026-11-25_2030_hasbihal_hatir-uzun-unlu: paylaşım yayınlandı; medya kimliği: 18020849036953113.
+2026-11-25 21:03:23,547 | API isteği: POST https://graph.facebook.com/v24.0/17841435490412157/media
+2026-11-25 21:03:24,660 | API isteği: GET https://graph.facebook.com/v24.0/18105497558183014
+2026-11-25 21:03:27,003 | API isteği: GET https://graph.facebook.com/v24.0/18105497558183014
+2026-11-25 21:03:30,240 | API isteği: GET https://graph.facebook.com/v24.0/18105497558183014
+2026-11-25 21:03:35,082 | API isteği: GET https://graph.facebook.com/v24.0/18105497558183014
+2026-11-25 21:03:42,010 | API isteği: GET https://graph.facebook.com/v24.0/18105497558183014
+2026-11-25 21:03:52,408 | API isteği: GET https://graph.facebook.com/v24.0/18105497558183014
+2026-11-25 21:03:53,766 | API isteği: POST https://graph.facebook.com/v24.0/17841435490412157/media_publish
+2026-11-25 21:04:04,318 | API isteği: GET https://graph.facebook.com/v24.0/18128944861894393
+2026-11-25 21:04:04,607 | 2026-11-25_2100_osm_sevi-gonul-yapmak: paylaşım yayınlandı; medya kimliği: 18128944861894393.
