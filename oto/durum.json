@@ -218,10 +218,13 @@
       "klasor": "2026-11-25_2030_hasbihal_hatir-uzun-unlu",
       "ozet": "f74e14e9297ab70e67e5fb378dce23b40dbaa0cf77d4f7ccf36c74a9cf508d6c",
       "hesap": "hasbihal",
-      "durum": "yayinlaniyor",
+      "durum": "yayinlandi",
       "deneme_sayisi": 0,
       "konteyner_id": "18082212635470438",
-      "yayina_baslama": "2026-11-25T20:35:44+03:00"
+      "yayina_baslama": "2026-11-25T20:35:44+03:00",
+      "media_id": "18020849036953113",
+      "yayin_zamani": "2026-11-25T20:35:53+03:00",
+      "permalink": ""
     }
   },
   "tokenlar": {
