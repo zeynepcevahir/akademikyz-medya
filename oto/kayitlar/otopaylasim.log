@@ -257,3 +257,13 @@
 2026-11-26 19:35:24,696 | API isteği: POST https://graph.facebook.com/v24.0/17841463028324015/media_publish
 2026-11-26 19:35:36,633 | API isteği: GET https://graph.facebook.com/v24.0/18170391433492829
 2026-11-26 19:35:36,847 | 2026-11-26_1930_tr_yz-metin-kontrolu: paylaşım yayınlandı; medya kimliği: 18170391433492829.
+2026-11-26 20:34:14,939 | API isteği: POST https://graph.facebook.com/v24.0/17841444113113164/media
+2026-11-26 20:34:17,779 | API isteği: GET https://graph.facebook.com/v24.0/18082298825470438
+2026-11-26 20:34:20,428 | API isteği: GET https://graph.facebook.com/v24.0/18082298825470438
+2026-11-26 20:34:24,251 | API isteği: GET https://graph.facebook.com/v24.0/18082298825470438
+2026-11-26 20:34:29,454 | API isteği: GET https://graph.facebook.com/v24.0/18082298825470438
+2026-11-26 20:34:36,922 | API isteği: GET https://graph.facebook.com/v24.0/18082298825470438
+2026-11-26 20:34:47,928 | API isteği: GET https://graph.facebook.com/v24.0/18082298825470438
+2026-11-26 20:34:49,739 | API isteği: POST https://graph.facebook.com/v24.0/17841444113113164/media_publish
+2026-11-26 20:35:09,155 | API isteği: GET https://graph.facebook.com/v24.0/17901987084396533
+2026-11-26 20:35:10,220 | 2026-11-26_2030_hasbihal_soz-emanet: paylaşım yayınlandı; medya kimliği: 17901987084396533.
