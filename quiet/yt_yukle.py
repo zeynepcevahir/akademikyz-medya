@@ -13,5 +13,13 @@ r=urllib.request.Request("https://www.googleapis.com/upload/youtube/v3/videos?up
 yer=urllib.request.urlopen(r).headers["Location"]
 veri=open(KLASOR+siradaki["dosya"],"rb").read()
 u=urllib.request.Request(yer,veri,{"Content-Type":"video/mp4"},method="PUT")
-print(urllib.request.urlopen(u).read().decode()[:300])
+cevap=json.loads(urllib.request.urlopen(u).read().decode()); print(cevap.get("id"))
+SERI={"Istanbul After Dark":(1,5,6,7),"Stone and Dome":(2,8,9,10),"Lost Secrets":(3,11,12),"Maps and Dates":(13,)}
+try:
+    no=int(siradaki["dosya"].split("_")[0]); pl=json.load(open("quiet/playlists.json"))
+    ad=next(a for a,n in SERI.items() if no in n)
+    if ad in pl:
+        r=urllib.request.Request("https://www.googleapis.com/youtube/v3/playlistItems?part=snippet",json.dumps({"snippet":{"playlistId":pl[ad],"resourceId":{"kind":"youtube#video","videoId":cevap["id"]}}}).encode(),{"Authorization":"Bearer "+t,"Content-Type":"application/json"})
+        urllib.request.urlopen(r)
+except Exception as e: print("Oynatma listesine eklenemedi:",e)
 biten.append(siradaki["dosya"]); json.dump(biten,open(YAYIN,"w"))

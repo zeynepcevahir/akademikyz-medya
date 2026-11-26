@@ -1,0 +1,17 @@
+name: Quiet Empires kanal ayarları
+on: workflow_dispatch
+permissions:
+  contents: write
+jobs:
+  ayar:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - run: python3 quiet/kanal_ayar.py
+        env:
+          YT_CLIENT_ID: ${{ secrets.YT_CLIENT_ID }}
+          YT_CLIENT_SECRET: ${{ secrets.YT_CLIENT_SECRET }}
+          YT_QUIET_TOKEN: ${{ secrets.YT_QUIET_TOKEN }}
+      - run: |
+          git config user.name "yayin-botu"; git config user.email "bot@users.noreply.github.com"
+          git add quiet/playlists.json && git commit -m "Quiet Empires: oynatma listeleri" && git push || true

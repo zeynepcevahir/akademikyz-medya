@@ -62,7 +62,7 @@ istek = urllib.request.Request("https://www.googleapis.com/youtube/v3/channels?p
 kanallar = json.load(urllib.request.urlopen(istek)).get("items", [])
 print("Bağlanan kanal:", ", ".join(k["snippet"]["title"] for k in kanallar) or "(kanal bulunamadı!)")
 BEKLENEN = {"osm": "Şarkılarla Osmanlıca", "hasbihal": "Osmanlıca Hasbihal", "quiet": "Quiet Empires"}[hesap]
-KABUL = {BEKLENEN} | ({"MindMap Study Lab"} if hesap == "quiet" else set())
+KABUL = {BEKLENEN} | ({"MindMap Study Lab", "Dil Atölyem", "Dil Atolyem"} if hesap == "quiet" else set())
 if not any(k["snippet"]["title"].strip() in KABUL for k in kanallar):
     sys.exit(f"YANLIŞ KANAL: '{BEKLENEN}' seçilmeliydi. Hiçbir şey kaydedilmedi; tekrar çalıştırıp doğru kanalı seçin.")
 
