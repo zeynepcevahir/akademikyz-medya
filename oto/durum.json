@@ -257,10 +257,13 @@
       "klasor": "2026-11-26_1900_tez_666063",
       "ozet": "ce13c1b4208810c2ec2b1902ec17477b50d6ad7a77019bc73e090d0f57d049e6",
       "hesap": "tez",
-      "durum": "yayinlaniyor",
+      "durum": "yayinlandi",
       "deneme_sayisi": 0,
       "konteyner_id": "17912665620378744",
-      "yayina_baslama": "2026-11-26T19:04:36+03:00"
+      "yayina_baslama": "2026-11-26T19:04:36+03:00",
+      "media_id": "18151343845573750",
+      "yayin_zamani": "2026-11-26T19:04:43+03:00",
+      "permalink": ""
     }
   },
   "tokenlar": {
