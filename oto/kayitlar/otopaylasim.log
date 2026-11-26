@@ -213,3 +213,14 @@
 2026-11-25 21:03:53,766 | API isteği: POST https://graph.facebook.com/v24.0/17841435490412157/media_publish
 2026-11-25 21:04:04,318 | API isteği: GET https://graph.facebook.com/v24.0/18128944861894393
 2026-11-25 21:04:04,607 | 2026-11-25_2100_osm_sevi-gonul-yapmak: paylaşım yayınlandı; medya kimliği: 18128944861894393.
+2026-11-26 17:04:55,023 | API isteği: POST https://graph.facebook.com/v24.0/17841477202180739/media
+2026-11-26 17:04:56,537 | API isteği: GET https://graph.facebook.com/v24.0/17881250994573407
+2026-11-26 17:04:58,817 | API isteği: GET https://graph.facebook.com/v24.0/17881250994573407
+2026-11-26 17:05:01,955 | API isteği: GET https://graph.facebook.com/v24.0/17881250994573407
+2026-11-26 17:05:06,608 | API isteği: GET https://graph.facebook.com/v24.0/17881250994573407
+2026-11-26 17:05:13,507 | API isteği: GET https://graph.facebook.com/v24.0/17881250994573407
+2026-11-26 17:05:23,793 | API isteği: GET https://graph.facebook.com/v24.0/17881250994573407
+2026-11-26 17:05:39,102 | API isteği: GET https://graph.facebook.com/v24.0/17881250994573407
+2026-11-26 17:05:40,368 | API isteği: POST https://graph.facebook.com/v24.0/17841477202180739/media_publish
+2026-11-26 17:05:49,503 | API isteği: GET https://graph.facebook.com/v24.0/18064414142546721
+2026-11-26 17:05:49,646 | 2026-11-26_1700_en_yz-metin-kontrolu: paylaşım yayınlandı; medya kimliği: 18064414142546721.
