@@ -90,8 +90,12 @@
   "ce13c1b4208810c2ec2b1902ec17477b50d6ad7a77019bc73e090d0f57d049e6": {
     "klasor": "2026-11-26_1900_tez_666063",
     "hesap": "tez",
-    "durum": "yukleniyor",
+    "durum": "yuklendi",
     "deneme": 1,
-    "baslama": "2026-11-26T16:04:51+00:00"
+    "baslama": "2026-11-26T16:04:51+00:00",
+    "video_id": "wRyurw6atQ4",
+    "gizlilik": "public",
+    "adres": "https://youtube.com/shorts/wRyurw6atQ4",
+    "ilk_yorum": "Ugzs0RB3Tacv9nEYYUt4AaABAg"
   }
 }
