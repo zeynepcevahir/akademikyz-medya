@@ -247,3 +247,13 @@
 2026-11-26 19:04:38,182 | API isteği: POST https://graph.facebook.com/v24.0/17841471362312602/media_publish
 2026-11-26 19:04:44,381 | API isteği: GET https://graph.facebook.com/v24.0/18151343845573750
 2026-11-26 19:04:44,667 | 2026-11-26_1900_tez_666063: paylaşım yayınlandı; medya kimliği: 18151343845573750.
+2026-11-26 19:34:53,193 | API isteği: POST https://graph.facebook.com/v24.0/17841463028324015/media
+2026-11-26 19:34:55,045 | API isteği: GET https://graph.facebook.com/v24.0/17946519363100945
+2026-11-26 19:34:57,491 | API isteği: GET https://graph.facebook.com/v24.0/17946519363100945
+2026-11-26 19:35:00,709 | API isteği: GET https://graph.facebook.com/v24.0/17946519363100945
+2026-11-26 19:35:05,592 | API isteği: GET https://graph.facebook.com/v24.0/17946519363100945
+2026-11-26 19:35:12,649 | API isteği: GET https://graph.facebook.com/v24.0/17946519363100945
+2026-11-26 19:35:23,035 | API isteği: GET https://graph.facebook.com/v24.0/17946519363100945
+2026-11-26 19:35:24,696 | API isteği: POST https://graph.facebook.com/v24.0/17841463028324015/media_publish
+2026-11-26 19:35:36,633 | API isteği: GET https://graph.facebook.com/v24.0/18170391433492829
+2026-11-26 19:35:36,847 | 2026-11-26_1930_tr_yz-metin-kontrolu: paylaşım yayınlandı; medya kimliği: 18170391433492829.
