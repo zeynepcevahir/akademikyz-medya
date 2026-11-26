@@ -283,10 +283,13 @@
       "klasor": "2026-11-26_2030_hasbihal_soz-emanet",
       "ozet": "de6f329394e68124aa4bf66474e62d7c4756b7738c3c7bd8c027265900b9c176",
       "hesap": "hasbihal",
-      "durum": "yayinlaniyor",
+      "durum": "yayinlandi",
       "deneme_sayisi": 0,
       "konteyner_id": "18082298825470438",
-      "yayina_baslama": "2026-11-26T20:34:48+03:00"
+      "yayina_baslama": "2026-11-26T20:34:48+03:00",
+      "media_id": "17901987084396533",
+      "yayin_zamani": "2026-11-26T20:35:08+03:00",
+      "permalink": ""
     }
   },
   "tokenlar": {
