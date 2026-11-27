@@ -267,3 +267,22 @@
 2026-11-26 20:34:49,739 | API isteği: POST https://graph.facebook.com/v24.0/17841444113113164/media_publish
 2026-11-26 20:35:09,155 | API isteği: GET https://graph.facebook.com/v24.0/17901987084396533
 2026-11-26 20:35:10,220 | 2026-11-26_2030_hasbihal_soz-emanet: paylaşım yayınlandı; medya kimliği: 17901987084396533.
+2026-11-27 12:32:18,567 | API isteği: POST https://graph.facebook.com/v24.0/17841463028324015/media
+2026-11-27 12:32:22,031 | API isteği: GET https://graph.facebook.com/v24.0/17946649743100945
+2026-11-27 12:32:22,525 | API isteği: POST https://graph.facebook.com/v24.0/17841463028324015/media
+2026-11-27 12:32:26,119 | API isteği: GET https://graph.facebook.com/v24.0/17946649761100945
+2026-11-27 12:32:26,375 | API isteği: POST https://graph.facebook.com/v24.0/17841463028324015/media
+2026-11-27 12:32:30,388 | API isteği: GET https://graph.facebook.com/v24.0/17946649779100945
+2026-11-27 12:32:30,714 | API isteği: POST https://graph.facebook.com/v24.0/17841463028324015/media
+2026-11-27 12:32:33,735 | API isteği: GET https://graph.facebook.com/v24.0/17946649803100945
+2026-11-27 12:32:33,995 | API isteği: POST https://graph.facebook.com/v24.0/17841463028324015/media
+2026-11-27 12:32:37,605 | API isteği: GET https://graph.facebook.com/v24.0/17946649821100945
+2026-11-27 12:32:38,342 | API isteği: POST https://graph.facebook.com/v24.0/17841463028324015/media
+2026-11-27 12:32:41,847 | API isteği: GET https://graph.facebook.com/v24.0/17946649851100945
+2026-11-27 12:32:42,142 | API isteği: POST https://graph.facebook.com/v24.0/17841463028324015/media
+2026-11-27 12:32:46,379 | API isteği: GET https://graph.facebook.com/v24.0/17946649869100945
+2026-11-27 12:32:46,681 | API isteği: POST https://graph.facebook.com/v24.0/17841463028324015/media
+2026-11-27 12:32:49,853 | API isteği: GET https://graph.facebook.com/v24.0/17946649887100945
+2026-11-27 12:32:51,543 | API isteği: POST https://graph.facebook.com/v24.0/17841463028324015/media_publish
+2026-11-27 12:32:58,529 | API isteği: GET https://graph.facebook.com/v24.0/18123566137958107
+2026-11-27 12:32:59,027 | 2026-11-27_1230_tr_haftalik-cikti: paylaşım yayınlandı; medya kimliği: 18123566137958107.
