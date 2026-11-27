@@ -295,3 +295,5 @@
 2026-11-27 17:28:57,964 | API isteği: POST https://graph.facebook.com/v24.0/17841477202180739/media
 2026-11-27 17:38:47,150 | API isteği: POST https://graph.facebook.com/v24.0/17841477202180739/media
 2026-11-27 17:38:55,818 | 2026-11-27_1700_en_haftalik-cikti: Instagram yetkilendirmesi başarısız; token'ı denetleyin.
+2026-11-27 17:48:37,760 | API isteği: POST https://graph.facebook.com/v24.0/17841477202180739/media
+2026-11-27 17:48:47,461 | 2026-11-27_1700_en_haftalik-cikti: Instagram yetkilendirmesi başarısız; token'ı denetleyin.
