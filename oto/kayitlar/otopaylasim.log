@@ -288,3 +288,5 @@
 2026-11-27 12:32:59,027 | 2026-11-27_1230_tr_haftalik-cikti: paylaşım yayınlandı; medya kimliği: 18123566137958107.
 2026-11-27 17:02:56,752 | API isteği: POST https://graph.facebook.com/v24.0/17841477202180739/media
 2026-11-27 17:03:05,178 | 2026-11-27_1700_en_haftalik-cikti: Instagram yetkilendirmesi başarısız; token'ı denetleyin.
+2026-11-27 17:13:01,654 | API isteği: POST https://graph.facebook.com/v24.0/17841477202180739/media
+2026-11-27 17:13:11,840 | 2026-11-27_1700_en_haftalik-cikti: Instagram yetkilendirmesi başarısız; token'ı denetleyin.
