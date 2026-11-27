@@ -312,7 +312,16 @@
       "durum": "bekliyor",
       "deneme_sayisi": 0,
       "son_hata": "Instagram yetkilendirmesi başarısız; token'ı denetleyin.",
-      "hata_zamani": "2026-11-27T18:59:21+03:00"
+      "hata_zamani": "2026-11-27T19:10:13+03:00"
+    },
+    "2026-11-27_1900_tez_614148:ed6964281668fc28068724175688e979dae1261fe25921c78a265db396076842": {
+      "klasor": "2026-11-27_1900_tez_614148",
+      "ozet": "ed6964281668fc28068724175688e979dae1261fe25921c78a265db396076842",
+      "hesap": "tez",
+      "durum": "bekliyor",
+      "deneme_sayisi": 0,
+      "son_hata": "Instagram yetkilendirmesi başarısız; token'ı denetleyin.",
+      "hata_zamani": "2026-11-27T19:11:27+03:00"
     }
   },
   "tokenlar": {
