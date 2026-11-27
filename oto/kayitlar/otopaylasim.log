@@ -408,3 +408,4 @@
 2026-11-27 22:12:38,189 | 2026-11-27_2030_hasbihal_dil-gonul-lisan: Instagram yetkilendirmesi başarısız; token'ı denetleyin.
 2026-11-27 22:13:41,981 | API isteği: POST https://graph.facebook.com/v24.0/17841435490412157/media
 2026-11-27 22:13:43,261 | 2026-11-27_2100_osm_calap-gonul: Instagram yetkilendirmesi başarısız; token'ı denetleyin.
+2026-11-27 22:20:33,849 | API isteği: POST https://graph.facebook.com/v24.0/17841477202180739/media
