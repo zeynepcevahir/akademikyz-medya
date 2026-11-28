@@ -1161,3 +1161,4 @@
 2026-11-28 18:41:02,290 | 2026-11-27_2030_hasbihal_dil-gonul-lisan: Instagram yetkilendirmesi başarısız; token'ı denetleyin.
 2026-11-28 18:42:05,793 | API isteği: POST https://graph.facebook.com/v24.0/17841435490412157/media
 2026-11-28 18:42:07,097 | 2026-11-27_2100_osm_calap-gonul: Instagram yetkilendirmesi başarısız; token'ı denetleyin.
+2026-11-28 18:48:38,304 | API isteği: POST https://graph.facebook.com/v24.0/17841477202180739/media
