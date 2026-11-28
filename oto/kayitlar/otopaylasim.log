@@ -1276,3 +1276,11 @@
 2026-11-28 21:37:06,348 | 2026-11-27_2030_hasbihal_dil-gonul-lisan: Instagram yetkilendirmesi başarısız; token'ı denetleyin.
 2026-11-28 21:38:00,268 | API isteği: POST https://graph.facebook.com/v24.0/17841435490412157/media
 2026-11-28 21:38:01,672 | 2026-11-27_2100_osm_calap-gonul: Instagram yetkilendirmesi başarısız; token'ı denetleyin.
+2026-11-28 21:44:56,642 | API isteği: POST https://graph.facebook.com/v24.0/17841477202180739/media
+2026-11-28 21:45:04,945 | 2026-11-27_1700_en_haftalik-cikti: Instagram yetkilendirmesi başarısız; token'ı denetleyin.
+2026-11-28 21:46:09,575 | API isteği: POST https://graph.facebook.com/v24.0/17841471362312602/media
+2026-11-28 21:46:17,342 | 2026-11-27_1900_tez_614148: Instagram yetkilendirmesi başarısız; token'ı denetleyin.
+2026-11-28 21:47:22,290 | API isteği: POST https://graph.facebook.com/v24.0/17841444113113164/media
+2026-11-28 21:47:23,596 | 2026-11-27_2030_hasbihal_dil-gonul-lisan: Instagram yetkilendirmesi başarısız; token'ı denetleyin.
+2026-11-28 21:48:27,465 | API isteği: POST https://graph.facebook.com/v24.0/17841435490412157/media
+2026-11-28 21:48:28,856 | 2026-11-27_2100_osm_calap-gonul: Instagram yetkilendirmesi başarısız; token'ı denetleyin.
